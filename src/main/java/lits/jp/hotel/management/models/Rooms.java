@@ -7,14 +7,14 @@ import javax.persistence.*;
 @Data
 @Entity
 @Table(name = "rooms")
-public class Room {
+public class Rooms {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public int number;
+    private int number;
 
     @Column(name = "type")
-    public String type;
+    private String type;
 
     @Column(name = "is_occupied")
-    public boolean isOccupied;
+    private boolean isOccupied;
 }
