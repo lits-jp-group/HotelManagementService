@@ -31,4 +31,7 @@ public class Bookings {
     @NotNull
     private Date dateOut;
 
+    @ManyToOne
+    @JoinColumn(name = "staffId")
+    private StaffMember staffHandling;
 }
