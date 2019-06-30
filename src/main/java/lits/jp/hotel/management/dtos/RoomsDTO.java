@@ -2,6 +2,8 @@ package lits.jp.hotel.management.dtos;
 
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 public class RoomsDTO {
 
@@ -10,4 +12,6 @@ public class RoomsDTO {
     private String type;
 
     private boolean isOccupied;
+
+    private List<BookingsDTO> bookingHistory;
 }

@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 @Data
 @Entity
@@ -31,4 +32,6 @@ public class Guests {
     @Column(name = "telephone")
     private String telephone;
 
+    @OneToMany(mappedBy = "guest")
+    List<Bookings> bookingsList;
 }

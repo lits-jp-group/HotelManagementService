@@ -15,12 +15,12 @@ public class Bookings {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int bookingId;
 
-    @OneToOne
-    @JoinColumn(name="number")
+    @ManyToOne
+    @JoinColumn(name = "roomId")
     private Rooms room;
 
-    @OneToOne
-    @JoinColumn(name="guestId")
+    @ManyToOne
+    @JoinColumn(name = "guestId")
     private Guests guest;
 
     @Column(name = "date_in")

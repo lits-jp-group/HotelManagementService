@@ -1,8 +1,10 @@
 package lits.jp.hotel.management.dtos;
 
+import lits.jp.hotel.management.models.Bookings;
 import lombok.Data;
 
 import javax.persistence.Column;
+import java.util.List;
 
 @Data
 public class GuestsDTO {
@@ -17,4 +19,5 @@ public class GuestsDTO {
 
     private String telephone;
 
+    private List<BookingsDTO> bookingsList;
 }
