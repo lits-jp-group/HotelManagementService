@@ -11,7 +11,5 @@ public class RoomsDTO {
 
     private String type;
 
-    private boolean isOccupied;
-
     private List<BookingsDTO> bookingHistory;
 }

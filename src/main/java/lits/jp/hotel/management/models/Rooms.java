@@ -21,9 +21,6 @@ public class Rooms {
     @Column(name = "type")
     private String type;
 
-    @Column(name = "is_occupied")
-    private boolean isOccupied;
-
     @OneToMany(mappedBy = "room")
     List<Bookings> bookingHistory;
 }
