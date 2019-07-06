@@ -11,4 +11,6 @@ public interface GuestsRepository extends CrudRepository<Guests, Integer> {
 
     Iterable<Guests> findByEmail (String email);
 
+    Iterable<Guests> findByTelephone (String telephone);
+
 }

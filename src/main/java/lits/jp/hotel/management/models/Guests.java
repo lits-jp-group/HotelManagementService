@@ -24,7 +24,7 @@ public class Guests {
     private String lastName;
 
     @Column(name = "age")
-    private int age;
+    private Integer age;
 
     @Column(name = "email")
     private String email;
