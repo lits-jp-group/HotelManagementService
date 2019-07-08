@@ -13,7 +13,7 @@ public class GuestsDTO {
 
     private String lastName;
 
-    private int age;
+    private Integer age;
 
     private String email;
 
