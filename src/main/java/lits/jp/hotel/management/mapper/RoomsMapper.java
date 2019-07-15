@@ -15,13 +15,15 @@ public class RoomsMapper {
 
 
 
-    @Autowired
+//    @Autowired
     private ModelMapper mapper;
 
-//    @Autowired
-//    public RoomsMapper(ModelMapper mapper) {
-//        this.mapper = mapper;
-//    }
+    @Autowired
+    public RoomsMapper(ModelMapper mapper) {
+        this.mapper = mapper;
+        mapper.getConfiguration().setMethodAccessLevel(org.modelmapper.config.Configuration.AccessLevel.PUBLIC);
+        mapper.getConfiguration().setFieldAccessLevel(org.modelmapper.config.Configuration.AccessLevel.PROTECTED);
+    }
 
     public Rooms toEntity(RoomsDTO roomsDTO){
         return mapper.map(roomsDTO, Rooms.class);

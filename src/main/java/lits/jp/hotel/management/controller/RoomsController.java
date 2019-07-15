@@ -1,13 +1,13 @@
 package lits.jp.hotel.management.controller;
 
 import lits.jp.hotel.management.dtos.RoomsDTO;
-import lits.jp.hotel.management.service.RoomService;
+import lits.jp.hotel.management.services.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.constraints.Pattern;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -16,7 +16,7 @@ public class RoomsController {
     @Autowired
     RoomService roomService;
 
-    @GetMapping("/allRooms")
+    @GetMapping("/all")
     List<RoomsDTO> showAllRooms(){
         return roomService.showAllRooms();
     }
@@ -24,6 +24,11 @@ public class RoomsController {
     @PostMapping(value = "/addRoom")
     public  RoomsDTO addRoom(RoomsDTO roomsDTO){
         return roomService.addRoom(roomsDTO);
+    }
+
+    @GetMapping("/allbookedrooms")
+    public List<RoomsDTO> showBookedRoomsOnDate(@RequestParam  @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date date){
+       return roomService.showBookedRoomsOnDate(date);
     }
 
 }
