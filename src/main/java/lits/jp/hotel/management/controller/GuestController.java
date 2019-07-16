@@ -1,7 +1,7 @@
 package lits.jp.hotel.management.controller;
 
 import lits.jp.hotel.management.dtos.GuestsDTO;
-import lits.jp.hotel.management.service.GuestService;
+import lits.jp.hotel.management.services.GuestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;

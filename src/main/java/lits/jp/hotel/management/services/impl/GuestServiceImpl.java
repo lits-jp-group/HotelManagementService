@@ -1,10 +1,10 @@
-package lits.jp.hotel.management.service.impl;
+package lits.jp.hotel.management.services.impl;
 
 import lits.jp.hotel.management.dtos.GuestsDTO;
 import lits.jp.hotel.management.exceptions.GuestNotFoundException;
 import lits.jp.hotel.management.models.Guests;
 import lits.jp.hotel.management.repository.GuestsRepository;
-import lits.jp.hotel.management.service.GuestService;
+import lits.jp.hotel.management.services.GuestService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

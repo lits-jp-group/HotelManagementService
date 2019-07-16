@@ -1,4 +1,4 @@
-package lits.jp.hotel.management.service;
+package lits.jp.hotel.management.services;
 
 import lits.jp.hotel.management.dtos.GuestsDTO;
 import java.util.List;
