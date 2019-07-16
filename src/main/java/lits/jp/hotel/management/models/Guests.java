@@ -15,11 +15,11 @@ public class Guests {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int guestId;
 
-    @Column(name = "first_name")
+    @Column(name = "first_name", nullable = false)
     @NotNull
     private String firstName;
 
-    @Column(name = "last_name")
+    @Column(name = "last_name", nullable = false)
     @NotNull
     private String lastName;
 
@@ -33,6 +33,6 @@ public class Guests {
     @Column(name = "telephone")
     private String telephone;
 
-    @OneToMany(mappedBy = "guest")
+    @OneToMany(mappedBy = "guest", fetch = FetchType.LAZY)
     List<Bookings> bookingsList;
 }

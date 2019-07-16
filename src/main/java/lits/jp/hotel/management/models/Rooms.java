@@ -20,6 +20,6 @@ public class Rooms {
     @Column(name = "type")
     private String type;
 
-    @OneToMany(mappedBy = "room")
+    @OneToMany(mappedBy = "room", fetch = FetchType.LAZY)
     private List<Bookings> bookingHistory;
 }
