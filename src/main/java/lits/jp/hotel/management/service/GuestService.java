@@ -1,7 +1,6 @@
 package lits.jp.hotel.management.service;
 
 import lits.jp.hotel.management.dtos.GuestsDTO;
-
 import java.util.List;
 
 public interface GuestService {
