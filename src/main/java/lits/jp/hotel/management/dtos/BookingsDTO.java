@@ -15,7 +15,7 @@ public class BookingsDTO {
 
     private Guests guest;
 
-    private Date dateIn;
+    private Date dateIn; // if use date - better to use LocalDayTime, or LocalDate
 
     private Date dateOut;
 

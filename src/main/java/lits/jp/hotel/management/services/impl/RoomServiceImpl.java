@@ -58,7 +58,7 @@ public class RoomServiceImpl implements RoomService {
             bookedRooms.add(roomsRepository.findByRoomId(roomId));
         }
 
-        int allRoomId;
+        int allRoomId; //двійна вложеність перформанс буде хромати
         int bookedRoomId;
         for (Rooms rooms:allRooms){
             allRoomId=rooms.getRoomId();
@@ -91,7 +91,7 @@ public class RoomServiceImpl implements RoomService {
         List<Rooms> bookedRooms = new ArrayList<>();
         List<Bookings> bookings= bookingsRepository.showAllBookingsOnDate(date);
         List<BookingsDTO>bookingsDTO = bookings.stream().map(bookings1 -> bookingsMapper.toDto(bookings1)).collect(Collectors.toList());
-
+// convert to DTO better to do in controllers
         for (BookingsDTO b:bookingsDTO) {
             int roomId= b.getRoom().getRoomId();
             bookedRooms.add(roomsRepository.findByRoomId(roomId));

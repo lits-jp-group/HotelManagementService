@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
-@Service
+@Service // not necessary to use annotation here
 public interface RoomService {
 
     RoomsDTO addRoom(RoomsDTO roomsDTO);

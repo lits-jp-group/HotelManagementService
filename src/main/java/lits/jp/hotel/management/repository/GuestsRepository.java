@@ -5,7 +5,7 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface GuestsRepository extends CrudRepository<Guests, Integer> {
 
-    Iterable<Guests> findByFirstName(String firstName);
+    Iterable<Guests> findByFirstName(String firstName); // possible to use list or set
 
     Iterable<Guests> findByLastName(String lastName);
 

@@ -15,7 +15,7 @@ public class Bookings {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int bookingId;
 
-    @ManyToOne
+    @ManyToOne // to do everything in LAZY method
     @JoinColumn(name = "roomId")
     private Rooms room;
 
@@ -27,8 +27,8 @@ public class Bookings {
     @NotNull
     private Date dateIn;
 
-    @Column(name = "date_out")
-    @NotNull
+    @Column(name = "date_out") // nullable=true/false
+    @NotNull // used for response and request body
     private Date dateOut;
 
     @ManyToOne

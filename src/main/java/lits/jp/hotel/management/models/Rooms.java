@@ -25,5 +25,5 @@ public class Rooms {
     private String type;
 
     @OneToMany(mappedBy = "room")
-    private List<Bookings> bookingHistory;
+    private List<Bookings> bookingHistory; // = newArrayList
 }

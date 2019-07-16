@@ -13,6 +13,6 @@ public interface RoomsRepository extends CrudRepository<Rooms, Integer> {
 
     Rooms findByRoomId(int id);
 
-    @Query(value ="SELECT * FROM hotel.rooms" , nativeQuery = true)
+    @Query(value ="SELECT * FROM hotel.rooms" , nativeQuery = true) // replace by jpql request
     List<Rooms> showAllRooms();
 }
