@@ -1,14 +1,17 @@
-package lits.jp.hotel.management.services.impl;
+package lits.jp.hotel.management.service.impl;
 
 import lits.jp.hotel.management.dtos.GuestsDTO;
 import lits.jp.hotel.management.exceptions.GuestNotFoundException;
 import lits.jp.hotel.management.models.Guests;
 import lits.jp.hotel.management.repository.GuestsRepository;
-import lits.jp.hotel.management.services.GuestService;
+import lits.jp.hotel.management.service.GuestService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+
+import java.util.LinkedList;
+import java.util.List;
 
 @Service
 public class GuestServiceImpl implements GuestService {
@@ -18,6 +21,18 @@ public class GuestServiceImpl implements GuestService {
 
     @Autowired
     ModelMapper modelMapper;
+
+    @Override
+    public List<GuestsDTO> getAllGuests() {
+        List<GuestsDTO> guestsDTOList = new LinkedList<>();
+        guestsRepository.findAll().forEach(
+                x -> {guestsDTOList.add(modelMapper.map(x, GuestsDTO.class));}
+        );
+        if(guestsDTOList.isEmpty()) {
+            throw new GuestNotFoundException("No guests found");
+        }
+        return guestsDTOList;
+    }
 
     @Override
     public GuestsDTO findGuest(GuestsDTO guestToFind) {
@@ -60,22 +75,7 @@ public class GuestServiceImpl implements GuestService {
                 () ->  new GuestNotFoundException("Guest with id " + id + " not found")
         ),GuestsDTO.class);
 
-        toUpdate.setFirstName(updatedGuest.getFirstName() != null ?
-                updatedGuest.getFirstName() : toUpdate.getFirstName());
-
-        toUpdate.setLastName(updatedGuest.getLastName() != null ?
-                updatedGuest.getLastName() : toUpdate.getLastName());
-
-        toUpdate.setEmail(updatedGuest.getEmail() != null ?
-                updatedGuest.getEmail() : toUpdate.getEmail());
-
-        toUpdate.setTelephone(updatedGuest.getTelephone() != null ?
-                updatedGuest.getTelephone() : toUpdate.getTelephone());
-
-        toUpdate.setAge(updatedGuest.getAge() != null ?
-                updatedGuest.getAge() : toUpdate.getAge());
-
-        Guests update = modelMapper.map(toUpdate,Guests.class);
+        Guests update = modelMapper.map(updatedGuest,Guests.class);
 
         update.setGuestId(id);
 

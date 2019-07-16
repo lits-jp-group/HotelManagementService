@@ -1,8 +1,12 @@
-package lits.jp.hotel.management.services;
+package lits.jp.hotel.management.service;
 
 import lits.jp.hotel.management.dtos.GuestsDTO;
 
+import java.util.List;
+
 public interface GuestService {
+    List<GuestsDTO> getAllGuests();
+
     GuestsDTO findGuest(GuestsDTO guestToFind);
 
     GuestsDTO findGuestById(Integer id);

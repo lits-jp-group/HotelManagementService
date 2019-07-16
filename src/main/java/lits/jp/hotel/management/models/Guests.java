@@ -26,6 +26,7 @@ public class Guests {
     @Column(name = "age")
     private Integer age;
 
+
     @Column(name = "email")
     private String email;
 
