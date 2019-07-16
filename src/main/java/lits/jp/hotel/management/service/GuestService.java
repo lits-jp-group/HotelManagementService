@@ -5,11 +5,11 @@ import lits.jp.hotel.management.dtos.GuestsDTO;
 import java.util.List;
 
 public interface GuestService {
-    List<GuestsDTO> getAllGuests() throws Exception;
+    List<GuestsDTO> getAllGuests();
 
     GuestsDTO findGuest(GuestsDTO guestToFind);
 
-    GuestsDTO findGuestById(Integer id) throws Exception;
+    GuestsDTO findGuestById(Integer id);
 
     GuestsDTO addGuest(GuestsDTO guestToAdd);
 

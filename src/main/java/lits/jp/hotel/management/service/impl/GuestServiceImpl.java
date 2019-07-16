@@ -23,7 +23,7 @@ public class GuestServiceImpl implements GuestService {
     ModelMapper modelMapper;
 
     @Override
-    public List<GuestsDTO> getAllGuests() throws Exception {
+    public List<GuestsDTO> getAllGuests() {
         List<GuestsDTO> guestsDTOList = new LinkedList<>();
         guestsRepository.findAll().forEach(
                 x -> {guestsDTOList.add(modelMapper.map(x, GuestsDTO.class));}
@@ -36,11 +36,11 @@ public class GuestServiceImpl implements GuestService {
 
     @Override
     public GuestsDTO findGuest(GuestsDTO guestToFind) {
-        throw new NotImplementedException();
+        throw new NotImplementedException(); // IDK how to do findBy(example) with crudRepo, tbh
     }
 
     @Override
-    public GuestsDTO findGuestById(Integer id) throws Exception {
+    public GuestsDTO findGuestById(Integer id) {
         return modelMapper.map(guestsRepository.findById(id).orElseThrow(
                 () ->  new GuestNotFoundException("Guest with id " + id + " not found")
         ), GuestsDTO.class);
