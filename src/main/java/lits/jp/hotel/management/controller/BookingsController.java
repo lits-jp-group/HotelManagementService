@@ -18,7 +18,7 @@ public class BookingsController {
     @Autowired
     BookingsService bookingsService;
 
-    @PostMapping(value = "/booking")
+    @PostMapping(value = "/booking") // remove /booking
     @ResponseBody
     public BookingsDTO newBooking(@RequestBody BookingsDTO bookingsDTO){
 

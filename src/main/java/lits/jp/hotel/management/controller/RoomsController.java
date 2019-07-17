@@ -11,18 +11,18 @@ import java.util.Date;
 import java.util.List;
 
 @RestController
-@RequestMapping("/room")
+@RequestMapping("/room") // rooms!
 public class RoomsController {
     @Autowired
-    RoomService roomService;
+    RoomService roomService; // private
 
-    @GetMapping("/all")
+    @GetMapping("/all")// all remove
     List<RoomsDTO> showAllRooms(){
         return roomService.showAllRooms();
     }
 
-    @PostMapping(value = "/addRoom")
-    public  RoomsDTO addRoom(RoomsDTO roomsDTO){
+    @PostMapping(value = "/addRoom") // remove addRoom
+    public  RoomsDTO addRoom(RoomsDTO roomsDTO){ // add @RequestBody
         return roomService.addRoom(roomsDTO);
     }
 
