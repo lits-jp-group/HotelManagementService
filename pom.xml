@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>lits.jp</groupId>
-	<artifactId>hotel.management</artifactId>
+	<artifactId>hotelManagement</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>hotel.management</name>
-	<description>Demo project for Spring Boot</description>
+	<description>HotelManagementSystem. Spring Boot</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -32,6 +32,21 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>junit</groupId>
+					<artifactId>junit</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
 			<groupId>org.modelmapper</groupId>
 			<artifactId>modelmapper</artifactId>
 			<version>2.1.0</version>
@@ -45,6 +60,13 @@
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
+		</dependency>
+
+		<!--SWAGGER-->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.4.0</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -67,6 +89,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -78,35 +101,35 @@
 		</plugins>
 	</build>
 
-	<repositories>
-		<repository>
-			<id>spring-snapshots</id>
-			<name>Spring Snapshots</name>
-			<url>https://repo.spring.io/snapshot</url>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>spring-milestones</id>
-			<name>Spring Milestones</name>
-			<url>https://repo.spring.io/milestone</url>
-		</repository>
-	</repositories>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>spring-snapshots</id>
-			<name>Spring Snapshots</name>
-			<url>https://repo.spring.io/snapshot</url>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</pluginRepository>
-		<pluginRepository>
-			<id>spring-milestones</id>
-			<name>Spring Milestones</name>
-			<url>https://repo.spring.io/milestone</url>
-		</pluginRepository>
-	</pluginRepositories>
+	<!--<repositories>-->
+		<!--<repository>-->
+			<!--<id>spring-snapshots</id>-->
+			<!--<name>Spring Snapshots</name>-->
+			<!--<url>https://repo.spring.io/snapshot</url>-->
+			<!--<snapshots>-->
+				<!--<enabled>true</enabled>-->
+			<!--</snapshots>-->
+		<!--</repository>-->
+		<!--<repository>-->
+			<!--<id>spring-milestones</id>-->
+			<!--<name>Spring Milestones</name>-->
+			<!--<url>https://repo.spring.io/milestone</url>-->
+		<!--</repository>-->
+	<!--</repositories>-->
+	<!--<pluginRepositories>-->
+		<!--&lt;!&ndash;<pluginRepository>&ndash;&gt;-->
+			<!--&lt;!&ndash;<id>spring-snapshots</id>&ndash;&gt;-->
+			<!--&lt;!&ndash;<name>Spring Snapshots</name>&ndash;&gt;-->
+			<!--&lt;!&ndash;<url>https://repo.spring.io/snapshot</url>&ndash;&gt;-->
+			<!--&lt;!&ndash;<snapshots>&ndash;&gt;-->
+				<!--&lt;!&ndash;<enabled>true</enabled>&ndash;&gt;-->
+			<!--&lt;!&ndash;</snapshots>&ndash;&gt;-->
+		<!--&lt;!&ndash;</pluginRepository>&ndash;&gt;-->
+		<!--&lt;!&ndash;<pluginRepository>&ndash;&gt;-->
+			<!--&lt;!&ndash;<id>spring-milestones</id>&ndash;&gt;-->
+			<!--&lt;!&ndash;<name>Spring Milestones</name>&ndash;&gt;-->
+			<!--&lt;!&ndash;<url>https://repo.spring.io/milestone</url>&ndash;&gt;-->
+		<!--&lt;!&ndash;</pluginRepository>&ndash;&gt;-->
+	<!--</pluginRepositories>-->
 
 </project>

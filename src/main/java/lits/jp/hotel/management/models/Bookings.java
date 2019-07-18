@@ -15,7 +15,9 @@ public class Bookings {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int bookingId;
 
+
     @ManyToOne(fetch = FetchType.LAZY)
+
     @JoinColumn(name = "roomId")
     private Rooms room;
 
@@ -27,6 +29,7 @@ public class Bookings {
     private Date dateIn;
 
     @Column(name = "date_out", nullable = false)
+
     private Date dateOut;
 
     @ManyToOne(fetch = FetchType.LAZY)
