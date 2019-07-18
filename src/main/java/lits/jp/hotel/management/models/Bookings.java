@@ -15,23 +15,24 @@ public class Bookings {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int bookingId;
 
-    @ManyToOne // to do everything in LAZY method
+
+    @ManyToOne(fetch = FetchType.LAZY)
+
     @JoinColumn(name = "roomId")
     private Rooms room;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "guestId")
     private Guests guest;
 
-    @Column(name = "date_in")
-    @NotNull
+    @Column(name = "date_in", nullable = false)
     private Date dateIn;
 
-    @Column(name = "date_out") // nullable=true/false
-    @NotNull // used for response and request body
+    @Column(name = "date_out", nullable = false)
+
     private Date dateOut;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "staffId")
     private StaffMember staffHandling;
 }

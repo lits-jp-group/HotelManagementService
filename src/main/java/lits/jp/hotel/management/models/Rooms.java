@@ -1,7 +1,6 @@
 package lits.jp.hotel.management.models;
 
 import lombok.Data;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.util.List;
@@ -10,7 +9,6 @@ import java.util.List;
 @Entity
 @Table(name = "rooms")
 public class Rooms {
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,6 +22,6 @@ public class Rooms {
     @Column(name = "type")
     private String type;
 
-    @OneToMany(mappedBy = "room")
-    private List<Bookings> bookingHistory; // = newArrayList
+    @OneToMany(mappedBy = "room", fetch = FetchType.LAZY)
+    private List<Bookings> bookingHistory;
 }

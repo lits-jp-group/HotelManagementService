@@ -1,7 +1,10 @@
 package lits.jp.hotel.management.exceptions;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
-// add response status
+@ResponseStatus(HttpStatus.NOT_FOUND)
+
 public class GuestNotFoundException extends RuntimeException {
 
     public GuestNotFoundException(String message) {
