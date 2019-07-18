@@ -1,6 +1,5 @@
 package lits.jp.hotel.management.dtos;
 
-import lits.jp.hotel.management.models.Bookings;
 import lombok.Data;
 
 import java.util.List;

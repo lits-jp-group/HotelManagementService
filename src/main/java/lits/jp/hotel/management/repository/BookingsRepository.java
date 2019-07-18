@@ -3,14 +3,15 @@ package lits.jp.hotel.management.repository;
 import lits.jp.hotel.management.models.Bookings;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.Date;
 import java.util.List;
 
-// better to add annotation for repository
+@Repository
 public interface BookingsRepository extends CrudRepository<Bookings, Integer> {
 
-    Iterable<Bookings> findByBookingId(Integer id);
+    Bookings findByBookingId(Integer id); // removed Iterable<Bookings> for Bookings
 
     List<Bookings> getBookingsByDateInEquals(Date dateIn);
 
