@@ -5,7 +5,6 @@ target/
 !**/src/test/**
 src/main/resources/application.properties
 
-
 ### STS ###
 .apt_generated
 .classpath
@@ -16,7 +15,7 @@ src/main/resources/application.properties
 .sts4-cache
 
 ### IntelliJ IDEA ###
-.idea
+.idea/*
 *.iws
 *.iml
 *.ipr
