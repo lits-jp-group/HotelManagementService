@@ -15,13 +15,11 @@ public class Bookings {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int bookingId;
 
-
-    @ManyToOne(fetch = FetchType.LAZY)
-
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.ALL})
     @JoinColumn(name = "roomId")
     private Rooms room;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.ALL})
     @JoinColumn(name = "guestId")
     private Guests guest;
 
@@ -29,10 +27,9 @@ public class Bookings {
     private Date dateIn;
 
     @Column(name = "date_out", nullable = false)
-
     private Date dateOut;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.ALL}) // p.s. CascadeType added as repo test fails
     @JoinColumn(name = "staffId")
     private StaffMember staffHandling;
 }
