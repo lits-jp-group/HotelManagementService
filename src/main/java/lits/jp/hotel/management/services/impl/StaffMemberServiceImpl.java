@@ -3,6 +3,7 @@ package lits.jp.hotel.management.services.impl;
 import lits.jp.hotel.management.exceptions.StaffMemberException;
 import lits.jp.hotel.management.models.StaffMember;
 import lits.jp.hotel.management.repository.StaffMemberRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Service;
 import java.util.Arrays;
 import java.util.Objects;
 
+@Slf4j
 @Service(value = "staffMemberService")
 public class StaffMemberServiceImpl implements UserDetailsService {
 
@@ -29,7 +31,7 @@ public class StaffMemberServiceImpl implements UserDetailsService {
         if (Objects.isNull(user)) {
             throw new UsernameNotFoundException("Invalid username or password.");
         }
-        System.out.println("user from StaffMemberServiceImpl is "+ user);
+        log.info("User from StaffMemberServiceImpl is "+ user);
     return new org.springframework.security.core.userdetails.User(user.getLastName(), user.getPassword(), Arrays.asList(new SimpleGrantedAuthority("ROLE_ADMIN")));
     }
 

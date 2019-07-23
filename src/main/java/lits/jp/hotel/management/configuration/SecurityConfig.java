@@ -86,7 +86,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/swagger-ui.html",
                         "/swagger-resources/configuration/security").permitAll()
 //                    .antMatchers(HttpMethod.DELETE).hasRole("ADMIN")
-//                    .antMatchers("/api/user").hasRole("ADMIN")
+                    .antMatchers("/api/user").hasRole("ADMIN")
                     .anyRequest().authenticated();
 
         httpSecurity

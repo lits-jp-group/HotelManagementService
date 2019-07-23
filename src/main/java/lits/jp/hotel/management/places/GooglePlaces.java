@@ -10,7 +10,10 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -18,11 +21,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
+
 public class GooglePlaces {
 
-    @Value("${google.search.url}")
-    private String API_URL;
-//    public static final String API_URL = "https://maps.googleapis.com/maps/api/place/";
+
+//    public static final String google = "https://maps.googleapis.com/maps/api/place/";
 
     // METHODS
     public static final String METHOD_NEARBY_SEARCH = "nearbysearch";
@@ -43,6 +46,10 @@ public class GooglePlaces {
 
     private String apiKey = "AIzaSyD-PwiwfuC70H1ZFfqPkX3Wmdm6NCbxxXc"; // ключ працює лише 10 чи 12 запитів в добу. тому зараз поставив "заглушку".
 
+
+    @Autowired
+    private Environment environment;
+
     public List<String> getNearbyPlaces(List<String> places, double lat, double lng, int radius, String type) throws IOException {
 // SAMPLE URL
 //    https://maps.googleapis.com/maps/api/place - API_URL
@@ -53,12 +60,15 @@ public class GooglePlaces {
 //    &type=bar
 //    &key=AIzaSyD-PwiwfuC70H1ZFfqPkX3Wmdm6NCbxxXc
 
+        String pathApi = environment.getProperty("google.url"); // here i get the problem
+        System.out.println(pathApi);
         log.info("type from request (GooglePlaces.class) "+type);
 
-
+        log.info("should be link to google");
+        log.info(pathApi);
         StringBuilder uri = new StringBuilder();
 
-        uri.append(API_URL).append(METHOD_NEARBY_SEARCH);
+        uri.append(pathApi).append(METHOD_NEARBY_SEARCH);
         uri.append("/json?location=");
         uri.append(lat);
         uri.append(",");
@@ -101,14 +111,14 @@ public class GooglePlaces {
 //        //------------------ end write RESPONSE to file -----------------//
 
 
-//
-//// ------------------------ BEGIN READ FROM RESPONSEMOCK --------------
-//        ResponseMock rs = new ResponseMock();
-//        String contents = rs.giveMockedResponse();
-//// ------------------------ END READ FROM RESPONSEMOCK --------------
+
+// ------------------------ BEGIN READ FROM RESPONSEMOCK --------------
+        ResponseMock rs = new ResponseMock();
+        String contents = rs.giveMockedResponse();
+// ------------------------ END READ FROM RESPONSEMOCK --------------
 
 
-//        response = contents;
+        response = contents;
 
         JSONObject json = new JSONObject(response);
         JSONArray results = json.getJSONArray(ARRAY_RESULTS);
@@ -119,7 +129,6 @@ public class GooglePlaces {
 
                 JSONObject result=results.getJSONObject(i);
 
-                // location
                 JSONObject location=result.getJSONObject(OBJECT_GEOMETRY).getJSONObject(OBJECT_LOCATION);
 
                 double lat2=location.getDouble(DOUBLE_LATITUDE);
@@ -140,7 +149,8 @@ public class GooglePlaces {
                 places.add(place.toString());
             }
         }
-        System.out.println(places);
         return places;
     }
+
+
 }

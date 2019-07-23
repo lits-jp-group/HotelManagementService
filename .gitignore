@@ -15,7 +15,9 @@ src/main/resources/application.properties
 .sts4-cache
 
 ### IntelliJ IDEA ###
+./src/main/resources/application.properties
 .idea/*
+.idea/
 *.iws
 *.iml
 *.ipr
