@@ -6,6 +6,7 @@ import lits.jp.hotel.management.models.StaffMember;
 import lits.jp.hotel.management.repository.GuestsRepository;
 import lits.jp.hotel.management.repository.RoomsRepository;
 import lits.jp.hotel.management.repository.StaffMemberRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -15,12 +16,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+@Slf4j
 @SpringBootApplication
 public class Application implements ApplicationRunner {
-
-	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
-	}
 
 	@Autowired
 	private GuestsRepository guestsRepository;
@@ -39,8 +37,13 @@ public class Application implements ApplicationRunner {
 		return new BCryptPasswordEncoder();
 	} // when I inserted this bean - the test runs ok!
 
+	public static void main(String[] args) {
+		SpringApplication.run(Application.class, args);
+
+	}
+
 	@Override
-	public void run(ApplicationArguments args) throws Exception {
+	public void run(ApplicationArguments logger) throws Exception {
 
 		Guests initialGuest1 = new Guests();
 		initialGuest1.setFirstName("Jim");
