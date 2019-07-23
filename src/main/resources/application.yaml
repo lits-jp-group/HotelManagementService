@@ -1,0 +1,21 @@
+#spring:
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/hotel?useSSL=false&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&serverTimezone=UTC
+#    username: u3
+#    password: 123
+#  jpa:
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: validate
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.MySQL5Dialect
+#  liquibase:
+#    change-log: classpath:/changelog/db.changelog-master.yaml
+
+security:
+  token:
+    secret:
+      "AVENGERS"
+    expiry:
+      360

@@ -1,7 +1,16 @@
 package lits.jp.hotel.management.places;
 
+import lits.jp.hotel.management.exceptions.StaffMemberException;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpUriRequest;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
+
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +47,9 @@ public class GooglePlaces {
 //    &radius=1000
 //    &type=bar
 //    &key=AIzaSyD-PwiwfuC70H1ZFfqPkX3Wmdm6NCbxxXc
+
+        System.out.println("type from request"+type);
+
         String uri = String.format("%s%s/json?location=%f;%f&radius=%d&type=%s&key=%s",
                 API_URL,
                 METHOD_NEARBY_SEARCH,
@@ -48,43 +60,46 @@ public class GooglePlaces {
                 apiKey);
         uri = uri.replace(',', '.');
         uri = uri.replace(';', ',');
+        uri = uri.replace('"', '}');
+        uri = uri.replaceAll("[{}]", "");
+
 
         System.out.println("my url is following (from getNearByPlaces "+uri + ". class"+uri.getClass());
 
         String response = null;
 
-////    -------------------------- BEGIN SEND REQUEST ------------------------//
-//        try {
-//            final HttpClient client = new DefaultHttpClient();
-//            final HttpUriRequest request = new HttpGet(uri);
-//            final HttpResponse execute = client.execute(request);
-//            response = EntityUtils.toString(execute.getEntity());
-//        }
-//        catch (Exception e)
-//        {
-//            throw new MyLococException("IO Exception here"); // here it gives IO Exception
-//        }
-////    -------------------------- END SEND REQUEST ------------------------//
+//    -------------------------- BEGIN SEND REQUEST ------------------------//
+        try {
+            final HttpClient client = new DefaultHttpClient();
+            final HttpUriRequest request = new HttpGet(uri);
+            final HttpResponse execute = client.execute(request);
+            response = EntityUtils.toString(execute.getEntity());
+        }
+        catch (Exception e)
+        {
+            throw new StaffMemberException("IO Exception here"); // here it gives IO Exception
+        }
+//    -------------------------- END SEND REQUEST ------------------------//
 
 
-//        // ----------------------- write RESPONSE to file ---------//
-//        try{
-//            FileWriter fw=new FileWriter("D:\\testout.txt");
-//            fw.write(response);
-//            fw.close();
-//        }catch(Exception e){System.out.println(e);}
-//        System.out.println("Success...");
-//        //------------------ end write RESPONSE to file -----------------//
+        // ----------------------- write RESPONSE to file ---------//
+        try{
+            FileWriter fw=new FileWriter("testout.txt");
+            fw.write(response);
+            fw.close();
+        }catch(Exception e){System.out.println(e);}
+        System.out.println("Success...");
+        //------------------ end write RESPONSE to file -----------------//
 
 
 //
-// ------------------------ BEGIN READ FROM RESPONSEMOCK --------------
-        ResponseMock rs = new ResponseMock();
-        String contents = rs.giveMockedResponse();
-// ------------------------ END READ FROM RESPONSEMOCK --------------
+//// ------------------------ BEGIN READ FROM RESPONSEMOCK --------------
+//        ResponseMock rs = new ResponseMock();
+//        String contents = rs.giveMockedResponse();
+//// ------------------------ END READ FROM RESPONSEMOCK --------------
 
 
-        response = contents;
+//        response = contents;
 
         JSONObject json = new JSONObject(response);
         JSONArray results = json.getJSONArray(ARRAY_RESULTS);
