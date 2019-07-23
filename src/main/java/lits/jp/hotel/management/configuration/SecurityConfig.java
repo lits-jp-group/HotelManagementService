@@ -2,6 +2,7 @@ package lits.jp.hotel.management.configuration;
 
 import lits.jp.hotel.management.security.JwtAuthenticationEntryPoint;
 import lits.jp.hotel.management.security.JwtAuthenticationTokenFilter;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,6 +24,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import javax.annotation.Resource;
 import java.util.Arrays;
 
+@Slf4j
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity (prePostEnabled = true)

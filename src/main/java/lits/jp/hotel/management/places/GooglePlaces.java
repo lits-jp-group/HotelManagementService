@@ -1,6 +1,7 @@
 package lits.jp.hotel.management.places;
 
 import lits.jp.hotel.management.exceptions.StaffMemberException;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
@@ -9,15 +10,19 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+@Slf4j
 public class GooglePlaces {
 
-    public static final String API_URL = "https://maps.googleapis.com/maps/api/place/";
+    @Value("${google.search.url}")
+    private String API_URL;
+//    public static final String API_URL = "https://maps.googleapis.com/maps/api/place/";
 
     // METHODS
     public static final String METHOD_NEARBY_SEARCH = "nearbysearch";
@@ -48,48 +53,52 @@ public class GooglePlaces {
 //    &type=bar
 //    &key=AIzaSyD-PwiwfuC70H1ZFfqPkX3Wmdm6NCbxxXc
 
-        System.out.println("type from request"+type);
-
-        String uri = String.format("%s%s/json?location=%f;%f&radius=%d&type=%s&key=%s",
-                API_URL,
-                METHOD_NEARBY_SEARCH,
-                lat,
-                lng,
-                radius,
-                type,
-                apiKey);
-        uri = uri.replace(',', '.');
-        uri = uri.replace(';', ',');
-        uri = uri.replace('"', '}');
-        uri = uri.replaceAll("[{}]", "");
+        log.info("type from request (GooglePlaces.class) "+type);
 
 
-        System.out.println("my url is following (from getNearByPlaces "+uri + ". class"+uri.getClass());
+        StringBuilder uri = new StringBuilder();
+
+        uri.append(API_URL).append(METHOD_NEARBY_SEARCH);
+        uri.append("/json?location=");
+        uri.append(lat);
+        uri.append(",");
+        uri.append(lng);
+        uri.append("&radius=");
+        uri.append(radius);
+        uri.append("&type=");
+        uri.append(type);
+        uri.append("&key=");
+        uri.append(apiKey);
+        String url= uri.toString();
+        url = url.replace('"', '}');
+        url = url.replaceAll("[{}]", "");
+
+        log.info("my url is following (from getNearByPlaces "+url + ". class"+url.getClass());
 
         String response = null;
 
-//    -------------------------- BEGIN SEND REQUEST ------------------------//
-        try {
-            final HttpClient client = new DefaultHttpClient();
-            final HttpUriRequest request = new HttpGet(uri);
-            final HttpResponse execute = client.execute(request);
-            response = EntityUtils.toString(execute.getEntity());
-        }
-        catch (Exception e)
-        {
-            throw new StaffMemberException("IO Exception here"); // here it gives IO Exception
-        }
-//    -------------------------- END SEND REQUEST ------------------------//
-
-
-        // ----------------------- write RESPONSE to file ---------//
-        try{
-            FileWriter fw=new FileWriter("testout.txt");
-            fw.write(response);
-            fw.close();
-        }catch(Exception e){System.out.println(e);}
-        System.out.println("Success...");
-        //------------------ end write RESPONSE to file -----------------//
+////    -------------------------- BEGIN SEND REQUEST ------------------------//
+//        try {
+//            final HttpClient client = new DefaultHttpClient();
+//            final HttpUriRequest request = new HttpGet(url);
+//            final HttpResponse execute = client.execute(request);
+//            response = EntityUtils.toString(execute.getEntity());
+//        }
+//        catch (Exception e)
+//        {
+//            throw new StaffMemberException("IO Exception here"); // here it gives IO Exception
+//        }
+////    -------------------------- END SEND REQUEST ------------------------//
+//
+//
+//        // ----------------------- write RESPONSE to file ---------//
+//        try{
+//            FileWriter fw=new FileWriter("testout.txt");
+//            fw.write(response);
+//            fw.close();
+//        }catch(Exception e){System.out.println(e);}
+//        log.info("Response successfully written to file HotelManagementSystem in root (near pom file)...");
+//        //------------------ end write RESPONSE to file -----------------//
 
 
 //
