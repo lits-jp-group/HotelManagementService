@@ -15,16 +15,17 @@ public class Guests {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int guestId;
 
-    @Column(name = "first_name")
-    @NotNull
+    @Column(name = "first_name", nullable = false)
+//    @NotNull
     private String firstName;
 
-    @Column(name = "last_name")
-    @NotNull
+    @Column(name = "last_name", nullable = false)
+//    @NotNull
     private String lastName;
 
     @Column(name = "age")
     private Integer age;
+
 
     @Column(name = "email")
     private String email;
@@ -32,6 +33,6 @@ public class Guests {
     @Column(name = "telephone")
     private String telephone;
 
-    @OneToMany(mappedBy = "guest")
+    @OneToMany(mappedBy = "guest", fetch = FetchType.LAZY)
     List<Bookings> bookingsList;
 }

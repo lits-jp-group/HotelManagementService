@@ -1,22 +1,20 @@
 package lits.jp.hotel.management.dtos;
 
-import lits.jp.hotel.management.models.Guests;
-import lits.jp.hotel.management.models.Rooms;
-import lombok.Data;
 
-import java.sql.Date;
+import lombok.Data;
+import java.time.LocalDate;
 
 @Data
 public class BookingsDTO {
 
     private int bookingId;
 
-    private Rooms room;
+    private Integer room_id;
 
-    private Guests guest;
+    private Integer guest_id;
 
-    private Date dateIn;
+    private LocalDate dateIn;
 
-    private Date dateOut;
+    private LocalDate dateOut;
 
 }

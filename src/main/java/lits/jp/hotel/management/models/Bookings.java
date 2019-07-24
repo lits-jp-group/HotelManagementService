@@ -1,10 +1,9 @@
 package lits.jp.hotel.management.models;
 
 import lombok.Data;
-
+import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import java.sql.Date;
+import java.time.LocalDate;
 
 @Data
 @Entity
@@ -15,23 +14,23 @@ public class Bookings {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int bookingId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "roomId")
     private Rooms room;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "guestId")
     private Guests guest;
 
-    @Column(name = "date_in")
-    @NotNull
-    private Date dateIn;
+    @Column(name = "date_in", nullable = false)
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
+    private LocalDate dateIn;
 
-    @Column(name = "date_out")
-    @NotNull
-    private Date dateOut;
+    @Column(name = "date_out", nullable = false)
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
+    private LocalDate dateOut;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY) // p.s. CascadeType added as repo test fails
     @JoinColumn(name = "staffId")
     private StaffMember staffHandling;
 }

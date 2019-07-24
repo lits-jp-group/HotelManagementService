@@ -1,9 +1,10 @@
 package lits.jp.hotel.management.services;
 
 import lits.jp.hotel.management.dtos.GuestsDTO;
+import java.util.List;
 
 public interface GuestService {
-    GuestsDTO findGuest(GuestsDTO guestToFind);
+    List<GuestsDTO> getAllGuests();
 
     GuestsDTO findGuestById(Integer id);
 
@@ -12,8 +13,6 @@ public interface GuestService {
     Boolean removeGuestById(Integer id);
 
     Boolean removeGuest(GuestsDTO guestToRemove);
-
-    GuestsDTO updateGuest(GuestsDTO initGuest, GuestsDTO updatedGuest);
 
     GuestsDTO updateGuestById(Integer id, GuestsDTO updatedGuest);
 }
