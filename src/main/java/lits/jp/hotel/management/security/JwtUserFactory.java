@@ -8,8 +8,8 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 public class JwtUserFactory {
   private JwtUserFactory() {}
 
-  public static JwtUser create(Long accountId, String role) {
-    return new JwtUser(accountId, mapToGrantedAuthorities(role));
+  public static JwtUser create(Long accountId, List<GrantedAuthority> roles) {
+    return new JwtUser(accountId, roles);
   }
 
   private static List<GrantedAuthority> mapToGrantedAuthorities(String role) {

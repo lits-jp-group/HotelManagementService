@@ -1,9 +1,11 @@
 package lits.jp.hotel.management;
 
 import lits.jp.hotel.management.models.Guests;
+import lits.jp.hotel.management.models.Role;
 import lits.jp.hotel.management.models.Rooms;
 import lits.jp.hotel.management.models.StaffMember;
 import lits.jp.hotel.management.repository.GuestsRepository;
+import lits.jp.hotel.management.repository.RolesRepository;
 import lits.jp.hotel.management.repository.RoomsRepository;
 import lits.jp.hotel.management.repository.StaffMemberRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -16,6 +18,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Slf4j
 @SpringBootApplication
 public class Application implements ApplicationRunner {
@@ -25,6 +30,8 @@ public class Application implements ApplicationRunner {
   @Autowired private RoomsRepository roomsRepository;
 
   @Autowired private StaffMemberRepository staffMemberRepository;
+
+  @Autowired private RolesRepository rolesRepository;
 
   @Autowired PasswordEncoder passwordEncoder;
 
@@ -60,11 +67,18 @@ public class Application implements ApplicationRunner {
     roomStandard.setNumber(15);
     roomsRepository.save(roomStandard);
 
+
+
+    Role role = new Role();
+    role.setName("admin");
+    Set<Role> roles = new HashSet<Role>();
+    roles.add(role);
     StaffMember staffMember = new StaffMember();
-    staffMember.setFirstName("adminfn");
-    staffMember.setLastName("admin");
+    staffMember.setFirstName("Santa");
+    staffMember.setLastName("Claus");
     staffMember.setPassword(passwordEncoder.encode("123"));
-    staffMember.setRole("Admin");
+    staffMember.setRoles(roles);
+    rolesRepository.save(role);
     staffMemberRepository.save(staffMember);
   }
 }

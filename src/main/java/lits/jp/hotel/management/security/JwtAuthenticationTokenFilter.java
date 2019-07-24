@@ -6,10 +6,10 @@ import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import lits.jp.hotel.management.services.TokenService;
+import lits.jp.hotel.management.services.impl.StaffMemberServiceImpl;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -19,9 +19,10 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 @Slf4j
 public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
-  private final Log logger = LogFactory.getLog(this.getClass());
 
   private static final String BEARER_TYPE = "Bearer";
+
+  @Autowired private StaffMemberServiceImpl staffMemberService;
 
   @Autowired private TokenService tokenService;
 
@@ -41,7 +42,9 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
     log.info("Long account ID(by JwtAuthenticationTokenFilter  = " + accountId);
 
     if (accountId != null && SecurityContextHolder.getContext().getAuthentication() == null) {
-      JwtUser jwtUser = JwtUserFactory.create(accountId, "ADMIN");
+      JwtUser jwtUser =
+          JwtUserFactory.create(
+              accountId, staffMemberService.getAuthority(staffMemberService.findOne(accountId)));
 
       UsernamePasswordAuthenticationToken authentication =
           new UsernamePasswordAuthenticationToken(jwtUser, null, jwtUser.getAuthorities());
@@ -49,10 +52,8 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
       log.info("authenticated user " + accountId + ", setting security context");
       SecurityContextHolder.getContext().setAuthentication(authentication);
     } else {
-
       log.info("Problem from JwtAuthenticationTokenFilter. account-ID from token is " + accountId);
     }
-
     chain.doFilter(request, response);
   }
 
