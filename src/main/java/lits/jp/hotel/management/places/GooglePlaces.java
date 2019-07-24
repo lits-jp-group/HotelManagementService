@@ -15,10 +15,10 @@ import org.springframework.core.env.Environment;
 // @PropertySource("classpath:application.properties")
 public class GooglePlaces implements SearchPlaces {
   // # TODO importing below value
-  @Value("${google.url}")
-  public static String pathApi;
+//  @Value("${google.url}")
+//  public static String pathApi;
 
-  //    public static final String google = "https://maps.googleapis.com/maps/api/place/";
+  public static final String pathApi = "https://maps.googleapis.com/maps/api/place/";
   public static final String METHOD_NEARBY_SEARCH = "nearbysearch";
   public static final String ARRAY_RESULTS = "results"; // Array for results
   public static final String DOUBLE_LATITUDE = "lat"; // Latitude of place
