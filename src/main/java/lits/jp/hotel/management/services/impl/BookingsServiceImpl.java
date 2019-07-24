@@ -8,6 +8,7 @@ import lits.jp.hotel.management.services.BookingsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -28,7 +29,7 @@ public class BookingsServiceImpl implements BookingsService {
 
 
     @Override
-    public List<BookingsDTO> showAllBookingsOnDate(Date date) {
+    public List<BookingsDTO> showAllBookingsOnDate(LocalDate date) {
         List<Bookings> bookings= bookingsRepository.showAllBookingsOnDate(date);
         return bookings.stream().map(bookings1 -> bookingsMapper.toDto(bookings1)).collect(Collectors.toList()); // remove bookings1
     }

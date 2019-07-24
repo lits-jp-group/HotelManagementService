@@ -13,6 +13,7 @@ import org.hibernate.mapping.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -45,7 +46,7 @@ public class RoomServiceImpl implements RoomService {
 
 
     @Override
-    public List<RoomsDTO> showAvailableRoomsOnDate(Date date) {
+    public List<Rooms> showAvailableRoomsOnDate(LocalDate date) {
         List<Rooms> allRooms = new ArrayList<>();
         List<Rooms> bookedRooms = new ArrayList<>();
         List<Rooms> availableRooms = new ArrayList<>();
@@ -69,25 +70,26 @@ public class RoomServiceImpl implements RoomService {
                 }
             }
         }
-        return availableRooms.stream().map(rooms -> roomsMapper.toDto(rooms)).collect(Collectors.toList());
-    }
-
-
-    @Override
-    public List<RoomsDTO> showAllRooms(){
-        List<Rooms> allRooms = new ArrayList<>();
-        allRooms.addAll(roomsRepository.showAllRooms());
-
-        return allRooms.stream().map(rooms -> roomsMapper.toDto(rooms)).collect(Collectors.toList());
-    }
-
-    @Override
-    public List<BookingsDTO> showBookingHistory(int number) {
         return null;
     }
 
 
-    public List<RoomsDTO> showBookedRoomsOnDate(Date date){
+    @Override
+    public List<Rooms> showAllRooms(){
+        List<Rooms> allRooms = new ArrayList<>();
+        allRooms.addAll(roomsRepository.showAllRooms());
+
+        return allRooms;
+
+
+    }
+
+    @Override
+    public List<Bookings> showBookingHistory(int number) {
+        return null;
+    }
+
+    public List<Rooms> showBookedRoomsOnDate (LocalDate date){
         List<Rooms> bookedRooms = new ArrayList<>();
         List<Bookings> bookings= bookingsRepository.showAllBookingsOnDate(date);
         List<BookingsDTO>bookingsDTO = bookings.stream().map(bookings1 -> bookingsMapper.toDto(bookings1)).collect(Collectors.toList());
@@ -96,7 +98,7 @@ public class RoomServiceImpl implements RoomService {
             int roomId= b.getRoom().getRoomId();
             bookedRooms.add(roomsRepository.findByRoomId(roomId));
         }
-        return bookedRooms.stream().map(rooms -> roomsMapper.toDto(rooms)).collect(Collectors.toList());
+        return null;
     }
 }
 

@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -32,7 +33,7 @@ public class BookingsController {
     @GetMapping(value = "/date")
     @ResponseBody
     public List<BookingsDTO> showAllBookingsOnDate(@RequestParam
-            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date date) {
+            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
         return bookingsService.showAllBookingsOnDate(date);
     }
 
