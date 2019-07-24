@@ -1,25 +1,22 @@
 package lits.jp.hotel.management.dtos;
 
-import lombok.Data;
-
+import java.util.List;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
-import java.util.List;
+import lombok.Data;
 
 @Data
 public class GuestsDTO {
-    @NotNull
-    private String firstName;
+  @NotNull private String firstName;
 
-    @NotNull
-    private String lastName;
+  @NotNull private String lastName;
 
-    private Integer age;
+  private Integer age;
 
-    @Pattern(regexp = "^(.+)@(.+)$")
-    private String email;
+  @Pattern(regexp = "^(.+)@(.+)$")
+  private String email;
 
-    private String telephone;
+  private String telephone;
 
-    private List<BookingsDTO> bookingsList;
+  private List<BookingsDTO> bookingsList;
 }

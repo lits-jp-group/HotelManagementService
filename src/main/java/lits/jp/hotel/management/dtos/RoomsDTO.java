@@ -1,15 +1,14 @@
 package lits.jp.hotel.management.dtos;
 
-import lombok.Data;
-
 import java.util.List;
+import lombok.Data;
 
 @Data
 public class RoomsDTO {
 
-    private int number;
+  private int number;
 
-    private String type;
+  private String type;
 
-    private List<BookingsDTO> bookingHistory;
+  private List<BookingsDTO> bookingHistory;
 }

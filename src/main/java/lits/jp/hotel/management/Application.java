@@ -20,57 +20,51 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @SpringBootApplication
 public class Application implements ApplicationRunner {
 
-	@Autowired
-	private GuestsRepository guestsRepository;
+  @Autowired private GuestsRepository guestsRepository;
 
-	@Autowired
-	private RoomsRepository roomsRepository;
+  @Autowired private RoomsRepository roomsRepository;
 
-	@Autowired
-	private StaffMemberRepository staffMemberRepository;
+  @Autowired private StaffMemberRepository staffMemberRepository;
 
-	@Autowired
-	PasswordEncoder passwordEncoder;
+  @Autowired PasswordEncoder passwordEncoder;
 
-	@Bean
-	PasswordEncoder getEncoder() {
-		return new BCryptPasswordEncoder();
-	} // when I inserted this bean - the test runs ok!
+  @Bean
+  PasswordEncoder getEncoder() {
+    return new BCryptPasswordEncoder();
+  } // when I inserted this bean - the test runs ok!
 
-	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+  public static void main(String[] args) {
+    SpringApplication.run(Application.class, args);
+  }
 
-	}
+  @Override
+  public void run(ApplicationArguments logger) throws Exception {
 
-	@Override
-	public void run(ApplicationArguments logger) throws Exception {
+    Guests initialGuest1 = new Guests();
+    initialGuest1.setFirstName("Jim");
+    initialGuest1.setLastName("Beam");
+    guestsRepository.save(initialGuest1);
 
-		Guests initialGuest1 = new Guests();
-		initialGuest1.setFirstName("Jim");
-		initialGuest1.setLastName("Beam");
-		guestsRepository.save(initialGuest1);
+    Guests initialGuest2 = new Guests();
+    initialGuest2.setFirstName("Dead");
+    initialGuest2.setLastName("Pool");
+    guestsRepository.save(initialGuest2);
 
-		Guests initialGuest2 = new Guests();
-		initialGuest2.setFirstName("Dead");
-		initialGuest2.setLastName("Pool");
-		guestsRepository.save(initialGuest2);
+    Rooms roomLux = new Rooms();
+    roomLux.setType("Lux");
+    roomLux.setNumber(13);
+    roomsRepository.save(roomLux);
 
-		Rooms roomLux = new Rooms();
-		roomLux.setType("Lux");
-		roomLux.setNumber(13);
-		roomsRepository.save(roomLux);
+    Rooms roomStandard = new Rooms();
+    roomStandard.setType("Standard");
+    roomStandard.setNumber(15);
+    roomsRepository.save(roomStandard);
 
-		Rooms roomStandard = new Rooms();
-		roomStandard.setType("Standard");
-		roomStandard.setNumber(15);
-		roomsRepository.save(roomStandard);
-
-		StaffMember staffMember = new StaffMember();
-		staffMember.setFirstName("adminfn");
-		staffMember.setLastName("admin");
-		staffMember.setPassword(passwordEncoder.encode("123"));
-		staffMember.setRole("Admin");
-		staffMemberRepository.save(staffMember);
-
-	}
+    StaffMember staffMember = new StaffMember();
+    staffMember.setFirstName("adminfn");
+    staffMember.setLastName("admin");
+    staffMember.setPassword(passwordEncoder.encode("123"));
+    staffMember.setRole("Admin");
+    staffMemberRepository.save(staffMember);
+  }
 }

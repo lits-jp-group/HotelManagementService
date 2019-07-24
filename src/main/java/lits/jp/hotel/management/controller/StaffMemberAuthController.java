@@ -14,23 +14,23 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
 @RestController
-@RequestMapping(value = "/api")
+@RequestMapping()
 public class StaffMemberAuthController {
 
-    private StaffMemberAuthService staffMemberAuthService;
+  private StaffMemberAuthService staffMemberAuthService;
 
-    @Autowired
-    public StaffMemberAuthController(StaffMemberAuthService staffMemberAuthService){
-        this.staffMemberAuthService = staffMemberAuthService;
-    }
+  @Autowired
+  public StaffMemberAuthController(StaffMemberAuthService staffMemberAuthService) {
+    this.staffMemberAuthService = staffMemberAuthService;
+  }
 
-    @Autowired
-    StaffMemberRepository staffMemberRepository;
+  @Autowired StaffMemberRepository staffMemberRepository;
 
-    @PostMapping(value = "/login")
-    @ApiOperation("auth")
-    public ResponseEntity<?> auth(@RequestBody StaffMember staffMember){
-        log.info("request from insomnia " + staffMember.getLastName(), staffMember.getPassword());
-        return ResponseEntity.ok(staffMemberAuthService.auth(staffMember.getLastName(), staffMember.getPassword()));
-    }
+  @PostMapping(value = "/login")
+  @ApiOperation("auth")
+  public ResponseEntity<?> auth(@RequestBody StaffMember staffMember) {
+    log.info("Request from POST client " + staffMember.getLastName(), staffMember.getPassword());
+    return ResponseEntity.ok(
+        staffMemberAuthService.auth(staffMember.getLastName(), staffMember.getPassword()));
+  }
 }

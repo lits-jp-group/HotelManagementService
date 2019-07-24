@@ -7,12 +7,11 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface GuestsRepository extends CrudRepository<Guests, Integer> {
 
-    Iterable<Guests> findByFirstName(String firstName); // possible to use list or set
+  Iterable<Guests> findByFirstName(String firstName); // possible to use list or set
 
-    Iterable<Guests> findByLastName(String lastName);
+  Iterable<Guests> findByLastName(String lastName);
 
-    Iterable<Guests> findByEmail (String email);
+  Iterable<Guests> findByEmail(String email);
 
-    Iterable<Guests> findByTelephone (String telephone);
-
+  Iterable<Guests> findByTelephone(String telephone);
 }

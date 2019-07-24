@@ -13,27 +13,20 @@ import org.springframework.stereotype.Service;
 @Service
 public class StaffMemberAuthServiceImpl implements StaffMemberAuthService {
 
-    @Autowired
-    private AuthenticationManager authenticationManager;
+  @Autowired private AuthenticationManager authenticationManager;
 
-    @Autowired
-    private TokenService tokenService;
+  @Autowired private TokenService tokenService;
 
-    @Autowired
-    private StaffMemberRepository staffMemberRepository;
+  @Autowired private StaffMemberRepository staffMemberRepository;
 
-    @Override
-    public String auth(String username, String pass) {
-        final Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(
-                        username,
-                        pass
-                )
-        );
-        SecurityContextHolder.getContext().setAuthentication(authentication);
-        StaffMember user = staffMemberRepository.findOneByLastName(username);
+  @Override
+  public String auth(String username, String pass) {
+    final Authentication authentication =
+        authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, pass));
+    SecurityContextHolder.getContext().setAuthentication(authentication);
+    StaffMember user = staffMemberRepository.findOneByLastName(username);
 
-        System.out.println("message from authServiceImpl");
-        return tokenService.createToken(user.getStaffMemberId());
-    }
+    System.out.println("message from authServiceImpl");
+    return tokenService.createToken(user.getStaffMemberId());
+  }
 }

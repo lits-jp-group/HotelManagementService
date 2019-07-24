@@ -1,16 +1,14 @@
 package lits.jp.hotel.management.dtos;
 
-import lombok.Data;
-
 import java.util.List;
+import lombok.Data;
 
 @Data
 public class StaffMemberDTO {
 
-    public String firstName;
+  public String firstName;
 
-    public String lastName;
+  public String lastName;
 
-    public List<BookingsDTO> bookingsHandled;
-
+  public List<BookingsDTO> bookingsHandled;
 }

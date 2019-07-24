@@ -9,14 +9,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/api")
+@RequestMapping()
 public class StaffMemberController {
 
-    @Autowired
-    StaffMemberServiceImpl staffMemberServiceImpl;
+  @Autowired StaffMemberServiceImpl staffMemberServiceImpl;
 
-    @PostMapping(value = "save")
-    public StaffMember saveStaffMember(@RequestBody StaffMember staffMember) {
-        return staffMemberServiceImpl.saveNewStaffMember(staffMember);
-    }
+  @PostMapping(value = "save")
+  public StaffMember saveStaffMember(@RequestBody StaffMember staffMember) {
+    return staffMemberServiceImpl.saveNewStaffMember(staffMember);
+  }
 }

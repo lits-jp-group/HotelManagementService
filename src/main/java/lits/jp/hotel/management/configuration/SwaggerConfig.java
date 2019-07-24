@@ -12,19 +12,27 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 @Configuration
 public class SwaggerConfig {
-    @Bean
-    public Docket api() {
-        return new Docket(DocumentationType.SWAGGER_2).select()
-                .apis(RequestHandlerSelectors.any())
-                .paths(PathSelectors.any())
-                .build()
-                .apiInfo(apiInfo())
-                ;
-    }
+  @Bean
+  public Docket api() {
+    return new Docket(DocumentationType.SWAGGER_2)
+        .select()
+        .apis(RequestHandlerSelectors.any())
+        .paths(PathSelectors.any())
+        .build()
+        .apiInfo(apiInfo());
+  }
 
-    private ApiInfo apiInfo() {
-        ApiInfo apiInfo = new ApiInfo("YIPS HotelManagementSystem. REST API", "Some description of API", "API YIPS", "Terms of service", "notmyaddress@maycomp.com", "Licence of API", "Api licence URL");
+  private ApiInfo apiInfo() {
+    ApiInfo apiInfo =
+        new ApiInfo(
+            "YIPS HotelManagementSystem. REST API",
+            "Some description of API",
+            "API YIPS",
+            "Terms of service",
+            "notmyaddress@maycomp.com",
+            "Licence of API",
+            "Api licence URL");
 
-        return apiInfo;
-    }
+    return apiInfo;
+  }
 }
