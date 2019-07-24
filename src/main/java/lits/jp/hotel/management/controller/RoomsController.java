@@ -7,14 +7,12 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @RestController
-@RequestMapping("/rooms") // rooms!
+@RequestMapping("/rooms")
 public class RoomsController {
 
 
@@ -27,9 +25,7 @@ public class RoomsController {
         this.mapper = mapper;
     }
 
-
-
-    @GetMapping // all remove
+    @GetMapping
     List<RoomsDTO> showAllRooms(){
         List<Rooms> rooms = roomService.showAllRooms();
         List<RoomsDTO> roomsDTO = new ArrayList<>();
@@ -37,14 +33,27 @@ public class RoomsController {
         return roomsDTO;
     }
 
-    @PostMapping(value = "/addRoom") // remove addRoom
-    public  RoomsDTO addRoom(RoomsDTO roomsDTO){ // add @RequestBody
-        return roomService.addRoom(roomsDTO);
+    @PostMapping
+    public  RoomsDTO addRoom(@RequestBody Rooms rooms){
+        Rooms roomsSaved = roomService.addRoom(rooms);
+        return mapper.map(roomsSaved, RoomsDTO.class);
     }
 
-    @GetMapping("/allbookedrooms")
-    public List<RoomsDTO> showBookedRoomsOnDate(@RequestParam  @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date){
-       return null;
+    @GetMapping("/bookedrooms")
+    public List<RoomsDTO> showBookedRoomsOnDate(@RequestParam("date")  @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date){
+        List<Rooms> rooms = roomService.showBookedRoomsOnDate(date);
+        List<RoomsDTO> roomsDTO = new ArrayList<>();
+                rooms.forEach(r ->roomsDTO.add(mapper.map(r, RoomsDTO.class)));
+       return  roomsDTO;
+    }
+
+    @GetMapping("/availableRooms")
+    public List<RoomsDTO> availableRoomsOnDate(@RequestParam("date")  @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date){
+        List<Rooms> rooms = roomService.showAvailableRoomsOnDate(date);
+        List<RoomsDTO> roomsDTO = new ArrayList<>();
+        rooms.forEach(r ->roomsDTO.add(mapper.map(r, RoomsDTO.class)));
+        return  roomsDTO;
+
     }
 
 }

@@ -22,16 +22,14 @@ public class BookingsServiceImpl implements BookingsService {
     BookingsMapper bookingsMapper;
 
     @Override
-    public BookingsDTO addBooking(BookingsDTO bookingsDTO) { // remove DTO into controllers
-        Bookings bookings = bookingsMapper.toEntity(bookingsDTO);
-        return bookingsMapper.toDto(bookingsRepository.save(bookings));
+    public Bookings addBooking(Bookings bookings) {
+        return bookingsRepository.save(bookings);
     }
 
 
     @Override
-    public List<BookingsDTO> showAllBookingsOnDate(LocalDate date) {
-        List<Bookings> bookings= bookingsRepository.showAllBookingsOnDate(date);
-        return bookings.stream().map(bookings1 -> bookingsMapper.toDto(bookings1)).collect(Collectors.toList()); // remove bookings1
+    public List<Bookings> showAllBookingsOnDate(LocalDate date) {
+        return bookingsRepository.showAllBookingsOnDate(date);
     }
 
 

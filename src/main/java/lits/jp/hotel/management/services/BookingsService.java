@@ -1,6 +1,7 @@
 package lits.jp.hotel.management.services;
 
 import lits.jp.hotel.management.dtos.BookingsDTO;
+import lits.jp.hotel.management.models.Bookings;
 import lits.jp.hotel.management.repository.GuestsRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,9 +14,9 @@ public interface BookingsService {
 
 
 
-    BookingsDTO addBooking (BookingsDTO booking);
+    Bookings addBooking (Bookings booking);
 
 
-    List<BookingsDTO> showAllBookingsOnDate(LocalDate date);
+    List<Bookings> showAllBookingsOnDate(LocalDate date);
 
 }

@@ -4,21 +4,15 @@ import lits.jp.hotel.management.models.Bookings;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 @Repository
 public interface BookingsRepository extends CrudRepository<Bookings, Integer> {
 
-    Bookings findByBookingId(Integer id); // removed Iterable<Bookings> for Bookings
+    Bookings findByBookingId(Integer id);
 
-    List<Bookings> getBookingsByDateInEquals(Date dateIn);
-
-    @Query(value = "SELECT * from hotel.bookings as b where ?1 between b.date_in and adddate(b.date_out, 1)", nativeQuery = true) // redo into jpql request
-    
-
+    @Query(value = "SELECT * from hotel.bookings as b where ?1 between b.date_in and adddate(b.date_out, 1)", nativeQuery = true)
     List<Bookings> showAllBookingsOnDate(LocalDate date);
 }
 

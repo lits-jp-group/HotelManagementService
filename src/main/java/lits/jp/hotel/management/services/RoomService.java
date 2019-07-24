@@ -12,7 +12,7 @@ import java.util.List;
 @Service // not necessary to use annotation here
 public interface RoomService {
 
-    RoomsDTO addRoom(RoomsDTO roomsDTO);
+    Rooms addRoom(Rooms rooms);
     void deleteRoom(int number);
     List<Rooms> showAllRooms();
     List<Bookings> showBookingHistory(int number);

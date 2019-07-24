@@ -16,11 +16,11 @@ public class Guests {
     private int guestId;
 
     @Column(name = "first_name", nullable = false)
-    @NotNull
+//    @NotNull
     private String firstName;
 
     @Column(name = "last_name", nullable = false)
-    @NotNull
+//    @NotNull
     private String lastName;
 
     @Column(name = "age")

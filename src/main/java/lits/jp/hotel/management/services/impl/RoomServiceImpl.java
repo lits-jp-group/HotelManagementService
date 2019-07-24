@@ -32,9 +32,8 @@ public class RoomServiceImpl implements RoomService {
     BookingsMapper bookingsMapper;
 
     @Override
-    public RoomsDTO addRoom(RoomsDTO roomsDTO) {
-        Rooms rooms=roomsMapper.toEntity(roomsDTO);
-        return roomsMapper.toDto(roomsRepository.save(rooms));
+    public Rooms addRoom(Rooms rooms) {
+                return roomsRepository.save(rooms);
     }
 
 
@@ -47,30 +46,21 @@ public class RoomServiceImpl implements RoomService {
 
     @Override
     public List<Rooms> showAvailableRoomsOnDate(LocalDate date) {
-        List<Rooms> allRooms = new ArrayList<>();
-        List<Rooms> bookedRooms = new ArrayList<>();
+        List<Rooms> allRooms = showAllRooms();
+        List<Rooms> bookedRooms = showBookedRoomsOnDate(date);
         List<Rooms> availableRooms = new ArrayList<>();
-        List<Bookings> bookings= bookingsRepository.showAllBookingsOnDate(date);
 
-        allRooms.addAll(roomsRepository.showAllRooms());
+        availableRooms= allRooms.stream().filter(a->!bookedRooms.contains(a)).collect(Collectors.toList());
 
-        for (Bookings b:bookings) {
-            int roomId= b.getRoom().getRoomId();
-            bookedRooms.add(roomsRepository.findByRoomId(roomId));
-        }
-
-        int allRoomId; //двійна вложеність перформанс буде хромати
-        int bookedRoomId;
-        for (Rooms rooms:allRooms){
-            allRoomId=rooms.getRoomId();
-            for (Rooms rooms1:bookedRooms) {
-                bookedRoomId = rooms1.getRoomId();
-                if(allRoomId!=bookedRoomId){
-                    availableRooms.add(roomsRepository.findByRoomId(allRoomId));
-                }
-            }
-        }
-        return null;
+//        for (Rooms all:allRooms) {
+//            for (Rooms booked:bookedRooms){
+//                if(all!=booked){
+//                    availableRooms.add(all);
+//                }
+//            }
+//
+//        }
+        return availableRooms;
     }
 
 
@@ -80,8 +70,6 @@ public class RoomServiceImpl implements RoomService {
         allRooms.addAll(roomsRepository.showAllRooms());
 
         return allRooms;
-
-
     }
 
     @Override
@@ -92,13 +80,8 @@ public class RoomServiceImpl implements RoomService {
     public List<Rooms> showBookedRoomsOnDate (LocalDate date){
         List<Rooms> bookedRooms = new ArrayList<>();
         List<Bookings> bookings= bookingsRepository.showAllBookingsOnDate(date);
-        List<BookingsDTO>bookingsDTO = bookings.stream().map(bookings1 -> bookingsMapper.toDto(bookings1)).collect(Collectors.toList());
-// convert to DTO better to do in controllers
-        for (BookingsDTO b:bookingsDTO) {
-            int roomId= b.getRoom().getRoomId();
-            bookedRooms.add(roomsRepository.findByRoomId(roomId));
-        }
-        return null;
+        bookings.forEach(b->bookedRooms.add(b.getRoom()));
+               return bookedRooms;
     }
 }
 
