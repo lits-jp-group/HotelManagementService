@@ -14,13 +14,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
 @Slf4j
-// @PropertySource("classpath:application.properties")
 public class GooglePlaces implements SearchPlaces {
-  // # TODO importing below value
-  //  @Value("${google.url}")
-  //  public static String pathApi;
 
-  public static final String pathApi = "https://maps.googleapis.com/maps/api/place/";
   public static final String METHOD_NEARBY_SEARCH = "nearbysearch";
   public static final String ARRAY_RESULTS = "results"; // Array for results
   public static final String DOUBLE_LATITUDE = "lat"; // Latitude of place
@@ -32,15 +27,14 @@ public class GooglePlaces implements SearchPlaces {
   public static final String STRING_NAME = "name"; // The name of the place
   public static final String STRING_VICINITY = "vicinity"; // The address of the place
 
-  private String apiKey = "AIzaSyD-PwiwfuC70H1ZFfqPkX3Wmdm6NCbxxXc";
-
   @Override
-  public List<String> getNearbyPlaces(List<String> places, PlacesRequest request)
+  public List<String> getNearbyPlaces(
+      List<String> places, PlacesRequest request, String googleUrl, String googleKey)
       throws IOException {
 
     RestTemplate restTemplate = new RestTemplate();
     ResponseEntity<String> responseEntity =
-        restTemplate.getForEntity(createURI(request), String.class);
+        restTemplate.getForEntity(createURI(request, googleUrl, googleKey), String.class);
 
     log.info(responseEntity.toString());
     log.info("============== end of response entity ===================");
@@ -96,18 +90,18 @@ public class GooglePlaces implements SearchPlaces {
     return places;
   }
 
-  private URI createURI(PlacesRequest request) {
+  private URI createURI(PlacesRequest request, String googleUrl, String googleKey) {
 
     StringBuilder url = new StringBuilder();
 
-    url.append(pathApi).append(METHOD_NEARBY_SEARCH);
+    url.append(googleUrl).append(METHOD_NEARBY_SEARCH);
     url.append("/json?location=");
     url.append(request.getLat());
     url.append(",");
     url.append(request.getLng());
     url.append(new BasicNameValuePair("&radius", request.getRadius().toString()));
     url.append(new BasicNameValuePair("&type", request.getType()));
-    url.append(new BasicNameValuePair("&key", apiKey));
+    url.append(new BasicNameValuePair("&key", googleKey));
 
     String finalurl = url.toString();
     finalurl = finalurl.replace('"', '}');
