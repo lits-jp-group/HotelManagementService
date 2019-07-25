@@ -10,15 +10,12 @@ import org.springframework.stereotype.Service;
 public class PlacesService {
 
   public List<String> getNearPlaces(PlacesRequest request) throws IOException {
-
     List<String> responseListPlaces = new ArrayList<>();
 
     if (request.getProvider().equals("google")) {
       GooglePlaces googlePlaces = new GooglePlaces();
-
       googlePlaces.getNearbyPlaces(responseListPlaces, request);
     }
-
     return responseListPlaces;
   }
 }

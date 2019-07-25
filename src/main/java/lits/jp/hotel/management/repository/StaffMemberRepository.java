@@ -8,4 +8,6 @@ import org.springframework.stereotype.Repository;
 public interface StaffMemberRepository extends CrudRepository<StaffMember, Long> {
 
   StaffMember findOneByLastName(String lastName);
+
+  StaffMember findOneByStaffMemberId(Long id);
 }

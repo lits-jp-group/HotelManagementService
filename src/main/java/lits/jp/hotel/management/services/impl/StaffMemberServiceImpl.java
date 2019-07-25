@@ -2,6 +2,7 @@ package lits.jp.hotel.management.services.impl;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import lits.jp.hotel.management.exceptions.StaffMemberException;
@@ -82,10 +83,9 @@ public class StaffMemberServiceImpl implements StaffMemberService, UserDetailsSe
     if (Objects.isNull(user)) {
       throw new UsernameNotFoundException("Invalid username or password.");
     }
-    log.info("User from StaffMemberServiceImpl is " + user);
     return new org.springframework.security.core.userdetails.User(
         user.getLastName(),
         user.getPassword(),
-        Arrays.asList(new SimpleGrantedAuthority("ROLE_ADMIN")));
+        Collections.singletonList(new SimpleGrantedAuthority("ROLE_ADMIN")));
   }
 }

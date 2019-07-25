@@ -1,0 +1,874 @@
+<200,{
+   "html_attributions" : [],
+   "next_page_token" : "CqQCHAEAACe6mBMqlG2qJD4J22fnvYJ08bhPrcM_i9bGgFR-VH6KofU1SLNYTkHayf7oCUsMVAKVxhQj8Emnf7FPUDWTgjs1NbP34PDgjZIq2RQZGTlhqfAPXhDEHoMCQimSuCo8_5TmjwC57ZFD8j5UZjk5ZyR4f-QJdIOpvPFSR5x8jiEhfuWBTlUCn0lsZlQ56ENAXICDf45xQcm4N896Myy20b6QV3Ufr9mqBgJccn9ICPzFaBawSRmYtyhwRwENUtYPOR8jNrVkWKzOOH7xsQ0-txPemK_vYLlUfeR2M4lUK53VaUOKzcS-FB6j7K5o8nZr_4kNQmefHHs5A09cU7C8DkbwC5pclxwGcg_E9hwuwDh6AXbqpsF0PtqLQaNoyzZ4NBIQk6n0lfj0AKstgqalZLrAKBoUI8JzO6jbTmRBT0cxRHk9c6zAhD4",
+   "results" : [
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 49.83968300000001,
+               "lng" : 24.02971699999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 49.897471,
+                  "lng" : 24.118191
+               },
+               "southwest" : {
+                  "lat" : 49.7679071,
+                  "lng" : 23.9062801
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png",
+         "id" : "f5c66e77aeea2caedf17d528a89e7ddb003492a0",
+         "name" : "Lviv",
+         "photos" : [
+            {
+               "height" : 868,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115383282529685638228/photos\"\u003eVova Ustiak\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAt3AASQl3HiheO1M29JvNMaOgkv0eGKdc3iLB8fOmxZwLf6qD7bNV81iu2rctYvJO-b6TV2sggERXv2if3BhHVtZURKnj5pSWq-u5GMddsypHsW5FdRNRWGi3RpCh1FShEhCl7laYKOk1VsUCCenhb65QGhSlxxqRICEkpxU1vAxGuGS3nYIf_A",
+               "width" : 1280
+            }
+         ],
+         "place_id" : "ChIJV5oQCXzdOkcR4ngjARfFI0I",
+         "reference" : "ChIJV5oQCXzdOkcR4ngjARfFI0I",
+         "scope" : "GOOGLE",
+         "types" : [ "locality", "political" ],
+         "vicinity" : "Lviv"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 49.8408946,
+               "lng" : 24.03358889999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 49.84220088029149,
+                  "lng" : 24.0347415802915
+               },
+               "southwest" : {
+                  "lat" : 49.8395029197085,
+                  "lng" : 24.0320436197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+         "id" : "a3063c6f5b6b5c05fb9418978ce58ddb5bef133a",
+         "name" : "Vintage Boutique Hotel",
+         "photos" : [
+            {
+               "height" : 1333,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106145510801339714176/photos\"\u003eSergey UA\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAA8dJunSJ5qW4chgck22aoGVG2BoHeOJE11xJs9gYv0JIU6LU7o7423fhNZB1w-0K53-piKe7Z03qYn6fDRrESqJhrxf8-bo_KAOoWxYWr965bMJkBYK0tGCKn1sR0RxW2EhBVjprhueqPsT_9H7tTj4MMGhQAhy-1q1rbrl-6dMReNtbm_TBHbQ",
+               "width" : 2000
+            }
+         ],
+         "place_id" : "ChIJEdGJQmzdOkcRKfWOOq7hI0k",
+         "plus_code" : {
+            "compound_code" : "R2RM+9C Lviv, Lviv Oblast, Ukraine",
+            "global_code" : "8GX6R2RM+9C"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJEdGJQmzdOkcRKfWOOq7hI0k",
+         "scope" : "GOOGLE",
+         "types" : [ "lodging", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 246,
+         "vicinity" : "Serbska Street, 11, Lviv"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 49.83874099999999,
+               "lng" : 24.027113
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 49.8401030302915,
+                  "lng" : 24.02844238029151
+               },
+               "southwest" : {
+                  "lat" : 49.8374050697085,
+                  "lng" : 24.0257444197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+         "id" : "efd021710bb481f9daa560a464a037297547ffb9",
+         "name" : "GHOSTel",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3623,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103702821607399874533/photos\"\u003eGHOSTel-Cредневековый Хостел\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAwgR4Pup5zY3X7w8LDqaea9vY-FR-B8K7mMNnN3DC8issNaTgkyVx00iO6WQkl2QhVqmJ1yJhbMVRtcfEY1DWEhAroPMqVx_IHTHem8PrGoc56INAoj-HrSHeLJ6fzv0YEhBQ65vMoCr9PNX1Bd4g297uGhSPFKByJbPfXTisfCSgmGUuAyX4pQ",
+               "width" : 5434
+            }
+         ],
+         "place_id" : "ChIJxRPhOG7dOkcREGcMPHf83kY",
+         "plus_code" : {
+            "compound_code" : "R2QG+FR Lviv, Lviv Oblast, Ukraine",
+            "global_code" : "8GX6R2QG+FR"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJxRPhOG7dOkcREGcMPHf83kY",
+         "scope" : "GOOGLE",
+         "types" : [ "lodging", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 229,
+         "vicinity" : "Mykoly Kopernyka Street, 9, Lviv"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 49.833968,
+               "lng" : 24.026788
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 49.8351967302915,
+                  "lng" : 24.0278363802915
+               },
+               "southwest" : {
+                  "lat" : 49.8324987697085,
+                  "lng" : 24.02513841970849
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+         "id" : "623168062b53942b57b3d8e564b11ce82f69191c",
+         "name" : "Citadel Inn",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 2548,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105292316835494427096/photos\"\u003eЦитадель Інн\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRZAAAA_9ndiVO1GA8hPImN16KLpvqBDu52BCXsQE22je2TFshuiKmn2wc0l3KFvEDe-cggQ3cMR6DQ7R_pJ87A4cs_y04_0Q5uLyctcSJeZKaulykWQYlcRYHfOOOHYhVxxnlpEhCO2lGaptHHpGOf43-RKyGAGhQsVZr5-pfsZkD1yUg9TDzcpkw75w",
+               "width" : 3822
+            }
+         ],
+         "place_id" : "ChIJCwKovWXdOkcR5Lirz1p5qlg",
+         "plus_code" : {
+            "compound_code" : "R2MG+HP Lviv, Lviv Oblast, Ukraine",
+            "global_code" : "8GX6R2MG+HP"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJCwKovWXdOkcR5Lirz1p5qlg",
+         "scope" : "GOOGLE",
+         "types" : [ "lodging", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 930,
+         "vicinity" : "Hrabovskoho Street, 11, Lviv"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 49.838666,
+               "lng" : 24.030713
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 49.84003668029149,
+                  "lng" : 24.0322172302915
+               },
+               "southwest" : {
+                  "lat" : 49.8373387197085,
+                  "lng" : 24.0295192697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+         "id" : "c879823ef2bd8850d286cf11b6a7a00fbb87fb0d",
+         "name" : "George Hotel",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 2904,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115325428575577571712/photos\"\u003ePaweł Jankowski\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAA1mnhlneUt_hVXkjeQHDWdK7jsajaPsJVcdXb4x6Ul0np8WYR2gT4A0t1PBtORRbpUFrBKIva9AOAYWQtbVUaVhDMxcWG-RQk8XwIG4o9x3uXIIDh5Jqw7gl5s5hvTKC7EhDRi-D6haQmIlaIbjbrBT7pGhQUzkB99tnLFQvfbwk_l_HLkpQe7A",
+               "width" : 4352
+            }
+         ],
+         "place_id" : "ChIJxzX-jW7dOkcRa5O97gGZ97s",
+         "plus_code" : {
+            "compound_code" : "R2QJ+F7 Lviv, Lviv Oblast, Ukraine",
+            "global_code" : "8GX6R2QJ+F7"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJxzX-jW7dOkcRa5O97gGZ97s",
+         "scope" : "GOOGLE",
+         "types" : [ "lodging", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 1323,
+         "vicinity" : "79000, площа Міцкевича, 1, Львів"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 49.845831,
+               "lng" : 24.025054
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 49.8471419302915,
+                  "lng" : 24.0265202802915
+               },
+               "southwest" : {
+                  "lat" : 49.8444439697085,
+                  "lng" : 24.0238223197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+         "id" : "79d9a1040928408436bb51706189bdc1355cd34b",
+         "name" : "Lviv Hotel",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 718,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102240770096728913733/photos\"\u003eГотель Львів\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAjkinMbS5bVChYk5DRDdlplZ4Hb-aZY4bprpF-_-iWd_iCTXDoI_kFZDLUu4QLsnSVeLkAUOnWFzbpQFTyKq-BxRv7xjbmycW1wj4Q3V5DAzEVdR8RdntHc_wqp_jOzkJEhDnh2H56S8YMkOPPFRLvEveGhQ6RyMQ7_zltjjBf9xzqYhGjZ38Zg",
+               "width" : 1024
+            }
+         ],
+         "place_id" : "ChIJGXxuSHPdOkcRyAgQsAJIQGs",
+         "plus_code" : {
+            "compound_code" : "R2WG+82 Lviv, Lviv Oblast, Ukraine",
+            "global_code" : "8GX6R2WG+82"
+         },
+         "rating" : 4,
+         "reference" : "ChIJGXxuSHPdOkcRyAgQsAJIQGs",
+         "scope" : "GOOGLE",
+         "types" : [ "lodging", "restaurant", "food", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 4380,
+         "vicinity" : "Viacheslava Chornovola Avenue, 7, Lviv"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 49.84229800000001,
+               "lng" : 24.032541
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 49.8436288302915,
+                  "lng" : 24.0338132302915
+               },
+               "southwest" : {
+                  "lat" : 49.8409308697085,
+                  "lng" : 24.0311152697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+         "id" : "3a5c1401ae217a3b495ef1557fdfbdc9269f1df5",
+         "name" : "Central Square Hostel",
+         "photos" : [
+            {
+               "height" : 4128,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101261156691437821340/photos\"\u003eюра соляк\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAPkISOqY4gqduTDLXh1YRaUHwlhK6AvUI7bONLzS6YvyDecge-1TFzUwndrWdj01CX2gRKDmtRlHyxbEx65rKG3YNhE67oRg95-tvB1xfWZuBC9eeErpBkplz4cIck93PEhDNHmNaxz4g2AwwWU9m8z8CGhSzlIBMDU4Uc3ADOXuTX1IFaWnX4w",
+               "width" : 2322
+            }
+         ],
+         "place_id" : "ChIJle5RAG3dOkcRNYievE7pisE",
+         "plus_code" : {
+            "compound_code" : "R2RM+W2 Lviv, Lviv Oblast, Ukraine",
+            "global_code" : "8GX6R2RM+W2"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJle5RAG3dOkcRNYievE7pisE",
+         "scope" : "GOOGLE",
+         "types" : [ "lodging", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 31,
+         "vicinity" : "Rynok Square, 5, Lviv"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 49.842986,
+               "lng" : 24.031934
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 49.8443484802915,
+                  "lng" : 24.0333636802915
+               },
+               "southwest" : {
+                  "lat" : 49.8416505197085,
+                  "lng" : 24.0306657197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+         "id" : "70b6284a0bc0d59542e3966af3c470725fa68fbc",
+         "name" : "Hollywood Home Hostel",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3648,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115060219053905998340/photos\"\u003eHollywood Home Hostel\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAbzWkqZ1hEkH3c6IWWgMfIO2ZaFVyPTneyQI7pB2w2ZyDxlUhsjj4Bpp2QsuHehr94gmcW95fNP4jgNHsyTVNdQC-UlfPNg6Cn-aAElgWeEFMKJKaq3L2lJ450Yc2tnL4EhAnXniTTlrUziMOD5NnYTdHGhSyWW1fAbbjo5D2GD3MQgHC9ZHxiw",
+               "width" : 5472
+            }
+         ],
+         "place_id" : "ChIJ3-bPQG3dOkcRFs7o4Qujjgg",
+         "plus_code" : {
+            "compound_code" : "R2VJ+5Q Lviv, Lviv Oblast, Ukraine",
+            "global_code" : "8GX6R2VJ+5Q"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJ3-bPQG3dOkcRFs7o4Qujjgg",
+         "scope" : "GOOGLE",
+         "types" : [ "lodging", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 168,
+         "vicinity" : "Drukarska Street, 3, кв 14, Lviv"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 49.8375603,
+               "lng" : 24.0301573
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 49.8389532802915,
+                  "lng" : 24.0314618302915
+               },
+               "southwest" : {
+                  "lat" : 49.83625531970851,
+                  "lng" : 24.0287638697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
+         "id" : "cf15bbabaf377832541a2112e42f26f9334928bf",
+         "name" : "Lviv National Philharmonic",
+         "photos" : [
+            {
+               "height" : 3096,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110620621187567773959/photos\"\u003eHelen Bogdan\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAArtu3xxr0oxrncCwOkIEjeMKe_FTSx3F0J1tm01BItYzx3bBupyzb0LmrTiCQKxi9Qe0sD4Byf7nZ2VeRaWb_Vx7qirrRfGZeFbU9AJNTYQpCOwmQ22j7G_dRhuLaevDUEhCsEq4Pyf5_DdSFhuHnx3aCGhTGjORLXqoMhBa1Rbo-fqN-BGQNFA",
+               "width" : 4128
+            }
+         ],
+         "place_id" : "ChIJqf5H4W7dOkcRVKcW2roqrEI",
+         "plus_code" : {
+            "compound_code" : "R2QJ+23 Lviv, Lviv Oblast, Ukraine",
+            "global_code" : "8GX6R2QJ+23"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJqf5H4W7dOkcRVKcW2roqrEI",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 1653,
+         "vicinity" : "Chaikovs'koho Street, 7, Lviv"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 49.8397158,
+               "lng" : 24.0240361
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 49.8411225302915,
+                  "lng" : 24.0254651302915
+               },
+               "southwest" : {
+                  "lat" : 49.83842456970851,
+                  "lng" : 24.02276716970849
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+         "id" : "3a1346d6a6487de5893c4d19e3401c8b7c839722",
+         "name" : "Cherry Hostel Lviv",
+         "photos" : [
+            {
+               "height" : 1808,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103640427536484515048/photos\"\u003ePiotr Kleszcz\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAt72FqxFnUZqO6Lbb02fPE-OWwtsT8xV3b0O5Q4fGFBHpHkb4pKsC3M-q-Oc6eyC_RUb3wVrUhi55GwWcZfOxZHwpIszStg9tvvUWqrHsfSB8o3MmVHNbkGt1rqwjKWR4EhCg2M8YWU0kf_rixMeRTarsGhRxyB5LsdHT2BoSJelA4tltoW0WsA",
+               "width" : 4048
+            }
+         ],
+         "place_id" : "ChIJXWoEnHHdOkcRklXhOgdP4DI",
+         "plus_code" : {
+            "compound_code" : "R2QF+VJ Lviv, Lviv Oblast, Ukraine",
+            "global_code" : "8GX6R2QF+VJ"
+         },
+         "rating" : 3.8,
+         "reference" : "ChIJXWoEnHHdOkcRklXhOgdP4DI",
+         "scope" : "GOOGLE",
+         "types" : [ "lodging", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 141,
+         "vicinity" : "вул. Тадеуша Костюшки, 5, Lviv"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 49.8422361,
+               "lng" : 24.0326706
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 49.8435570802915,
+                  "lng" : 24.0339012302915
+               },
+               "southwest" : {
+                  "lat" : 49.8408591197085,
+                  "lng" : 24.0312032697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
+         "id" : "e48da68cb36875fafdfc377319abd09e1a215b23",
+         "name" : "Museum of Historical Treasures",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3265,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102276012572215644024/photos\"\u003eDr. Thomas Liptak\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAA2BqOVWZ6Z23Q2U-8gvOcG2FxrObqxF7aN7pQ-Hq2b4ip3W1Cm4PP9ZtuOV5S8PKwIdPHM8RUf7YF6Y7FWSsrBQbbux-OZqydaBDvwjZM2wmCU-AsJPS8HHnQ7R1HV8d2EhCeNCHMLED_W4Xnm-t8dhxhGhS2FQOSi1WK1dGzRGCZF9X6eXLb8Q",
+               "width" : 4899
+            }
+         ],
+         "place_id" : "ChIJWegyAG3dOkcRAizEYaxjMyU",
+         "plus_code" : {
+            "compound_code" : "R2RM+V3 Lviv, Lviv Oblast, Ukraine",
+            "global_code" : "8GX6R2RM+V3"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJWegyAG3dOkcRAizEYaxjMyU",
+         "scope" : "GOOGLE",
+         "types" : [ "museum", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 62,
+         "vicinity" : "Rynok Square, 2, Lviv"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 49.8428804,
+               "lng" : 24.0347478
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 49.84424458029149,
+                  "lng" : 24.0362000302915
+               },
+               "southwest" : {
+                  "lat" : 49.8415466197085,
+                  "lng" : 24.0335020697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
+         "id" : "7b359f98ebd3cdb62af7ec829509f5da6f11bc88",
+         "name" : "Royal Arsenal",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 1080,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111322295760779114251/photos\"\u003eKajetan Garbela\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAJk5QpDrFMlDXxu01EFBi5GRfOC2TyLON98y0Q3sSceTSml6Ps-Jz0z2DWTGzvJCH-4_54cfXX0DBpS0NBPvnSGKDXi-_OaMI-SHN1bcMycW209Uq-ffDKiHa-T3YZ9C5EhAkpC-yn9WNK39DgNmG2lQSGhTlzXPcuH5_ZJAZkg4zL_B90BnPTQ",
+               "width" : 1080
+            }
+         ],
+         "place_id" : "ChIJC9EZ6GzdOkcRJrEiYgkR9L4",
+         "plus_code" : {
+            "compound_code" : "R2VM+5V Lviv, Lviv Oblast, Ukraine",
+            "global_code" : "8GX6R2VM+5V"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJC9EZ6GzdOkcRJrEiYgkR9L4",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 120,
+         "vicinity" : "Pidvalna Street, 13, Lviv"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 49.84221590000001,
+               "lng" : 24.0293633
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 49.8435390302915,
+                  "lng" : 24.0306039802915
+               },
+               "southwest" : {
+                  "lat" : 49.8408410697085,
+                  "lng" : 24.0279060197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+         "id" : "73aedd64a887a471869ed4e143d3bde6d6871e58",
+         "name" : "Leopolis",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 2340,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112795324142360789277/photos\"\u003ePedro Almeida\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAEw_-vsOtgX4ldUnU2XqJD8BfUqY6oEYz0DOOVEWHO6Xo8fcmBXupgHp4vB2M-Ym1sr78FH6yPcsz0YIU5svIIpNI9D_uCF-G1Wqpdj9OYcvCEQJpqY3hHdPnc-AkIxPxEhCUxglZKv2Hs8N8pO0qKr23GhRftSvXMYz44KXepTtKdNM44OKPRA",
+               "width" : 4160
+            }
+         ],
+         "place_id" : "ChIJzdzdj23dOkcRKiJClQRjk-M",
+         "plus_code" : {
+            "compound_code" : "R2RH+VP Lviv, Lviv Oblast, Ukraine",
+            "global_code" : "8GX6R2RH+VP"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJzdzdj23dOkcRKiJClQRjk-M",
+         "scope" : "GOOGLE",
+         "types" : [ "lodging", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 735,
+         "vicinity" : "Teatralna Street, 16, Lviv"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 49.8415165,
+               "lng" : 24.0369084
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 49.84284153029149,
+                  "lng" : 24.0380624302915
+               },
+               "southwest" : {
+                  "lat" : 49.84014356970849,
+                  "lng" : 24.0353644697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
+         "id" : "1edffa1d1e9d756585dab6858754bd892ae0dddc",
+         "name" : "Haus des Gouverneurs",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 1080,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114566982808862518989/photos\"\u003eПЕТРО ДЖУГА\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAU-4U64U3-EuKpXlcBS2j3MxAGvXRWGBtC2AqdVe5yx3WB6kfoCIm8YCTExoeGh8wO9pKqiO52ww8JaoZSlug0_iOtDKxKOhqBQwYGYiOkTiHTpR-IKmW02Si0jFIHUJUEhCMhmn4Nw_B8KLKiTRRei2PGhQ6lliIx8r_5WQVaEOJxWwA1szc9Q",
+               "width" : 1920
+            }
+         ],
+         "place_id" : "ChIJDcEFfGvdOkcRgnD3EyCToXQ",
+         "plus_code" : {
+            "compound_code" : "R2RP+JQ Lviv, Lviv Oblast, Ukraine",
+            "global_code" : "8GX6R2RP+JQ"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJDcEFfGvdOkcRgnD3EyCToXQ",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 26,
+         "vicinity" : "Volodymyra Vynnychenka Street, 18, Lviv"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 49.83391700000001,
+               "lng" : 24.033572
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 49.8353424302915,
+                  "lng" : 24.0350322302915
+               },
+               "southwest" : {
+                  "lat" : 49.83264446970851,
+                  "lng" : 24.0323342697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+         "id" : "92b7d9db11930174504f36dba1145922610c6e17",
+         "name" : "Classic Hostel",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 2592,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102182044981197693575/photos\"\u003eVALERII VLOG\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAI-mXA_4ITl3BWzwBZTq3FRjj4G7SXDIU4wy8G6GdgDLSekmsOUJDAm-VGhcjb_rMEIaXZPekr4EKiCMz-uKFVpPFfEaT1_zPs5Kw4AY_waLUfjr-dM5g_vJPVUdDAYGHEhDHHsAwcjXMDE4sWH1On4a8GhRuKgIlQqq99u0OwD5dunckPZ84Gw",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJJ86jgWjdOkcR98lbNNDGOcY",
+         "plus_code" : {
+            "compound_code" : "R2MM+HC Lviv, Lviv Oblast, Ukraine",
+            "global_code" : "8GX6R2MM+HC"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJJ86jgWjdOkcR98lbNNDGOcY",
+         "scope" : "GOOGLE",
+         "types" : [ "lodging", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 15,
+         "vicinity" : "Saksahans'koho Street, 20, Lviv"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 49.8361165,
+               "lng" : 24.0331793
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 49.8374967802915,
+                  "lng" : 24.0344782802915
+               },
+               "southwest" : {
+                  "lat" : 49.8347988197085,
+                  "lng" : 24.0317803197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+         "id" : "4e37eb995d18da18ae02a23042744dff276c62a0",
+         "name" : "Hotel \"NOBILIS\", Nobilis Restaurant, Piano-lounge Bar, 24-hour Lobby Bar",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 1318,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105184367367919420433/photos\"\u003eНобіліс\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAgZhrOBFVHlb5RfqZDCcbXfIxsDcuamjjICo8uoUwIB9KBN5dIgViufLWUwzWdIR0O4ppgkljgv79-7TlcRaZc33dtMfsns_-jcBVJsMZvupNFS2DzdfES6eGzqqwzZ7HEhANlez7uRdrdLc0Fev5U77DGhSBFl22bD3RWp-tRQLk_ImnCbotQg",
+               "width" : 2048
+            }
+         ],
+         "place_id" : "ChIJb1e722jdOkcR-eluUupfBLU",
+         "plus_code" : {
+            "compound_code" : "R2PM+C7 Lviv, Lviv Oblast, Ukraine",
+            "global_code" : "8GX6R2PM+C7"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJb1e722jdOkcR-eluUupfBLU",
+         "scope" : "GOOGLE",
+         "types" : [ "lodging", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 408,
+         "vicinity" : "Oleksandra Fredra Street, 5, Lviv"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 49.8450655,
+               "lng" : 24.0297639
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 49.84643133029149,
+                  "lng" : 24.0313173802915
+               },
+               "southwest" : {
+                  "lat" : 49.8437333697085,
+                  "lng" : 24.0286194197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+         "id" : "b9c9c37b1bd62292d03c788f1663ded14268dedd",
+         "name" : "Saint Feder",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 2158,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102364564014719401613/photos\"\u003eSaint Feder\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAl8Lt6s0KMfJUP3fvAAWVP0pULubw5OrMYEA8nwwlLDBUPvQH1C53WYdWWOlBQZt7EuN_2YWxZot3UT8Exz6rI5rGAkBvylhIbeCG9OJsMFyQl_jxculhBSkrouMy_z9yEhCselggJ8eNlfYrEDu8UxloGhSaYOf2o6hKTWCA7T8MxKG94Puxbg",
+               "width" : 3243
+            }
+         ],
+         "place_id" : "ChIJfYiLsXLdOkcRlNYHfZtGf_Y",
+         "plus_code" : {
+            "compound_code" : "R2WH+2W Lviv, Lviv Oblast, Ukraine",
+            "global_code" : "8GX6R2WH+2W"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJfYiLsXLdOkcRlNYHfZtGf_Y",
+         "scope" : "GOOGLE",
+         "types" : [ "lodging", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 189,
+         "vicinity" : "Zvenyhorods'ka Square, 3, Lviv"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 49.8381663,
+               "lng" : 24.0325032
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 49.8395496802915,
+                  "lng" : 24.0338347802915
+               },
+               "southwest" : {
+                  "lat" : 49.83685171970851,
+                  "lng" : 24.0311368197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+         "id" : "34b767f348e97488f0e6c8ac9dec7661edd3f9e9",
+         "name" : "Swiss Hotel",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3456,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100391516008459052423/photos\"\u003eШуруй Мандруй!\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAA678rKX3qTsDSxzgB5k6MsfCZfPnHVUIy83cVArXGCAqQFj1Rs2ObeTZoDQTRWxVogxOMQqMkI6SIAlQq7SAonQkPFzGARNQUXOQNFNqqsheU_boOp2dzyvWcEkrVlepwEhCR9awO2b9lE_jHBJfOFe21GhT0e3pul8_paTscL-_JKHCTCMSjfA",
+               "width" : 5184
+            }
+         ],
+         "place_id" : "ChIJx2jDt27dOkcRPmQ09o9LlhQ",
+         "plus_code" : {
+            "compound_code" : "R2QM+72 Lviv, Lviv Oblast, Ukraine",
+            "global_code" : "8GX6R2QM+72"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJx2jDt27dOkcRPmQ09o9LlhQ",
+         "scope" : "GOOGLE",
+         "types" : [ "lodging", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 386,
+         "vicinity" : "Kniazia Romana Street, 20, Lviv"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 49.8400435,
+               "lng" : 24.027737
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 49.8414617802915,
+                  "lng" : 24.0292917802915
+               },
+               "southwest" : {
+                  "lat" : 49.8387638197085,
+                  "lng" : 24.02659381970849
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+         "id" : "9562454f2a9824d11799998e1fc5747d4d75ef1a",
+         "name" : "Hotel Plazma",
+         "photos" : [
+            {
+               "height" : 2322,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102114055614737611430/photos\"\u003eRobson\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAl0lzeqHafSJaCFLRZr5iawXkfkkVkW9kIwvtM5XCeWvNglPxdMdimL7AGDmRv0jzhC1eaeV84tl--R_iEpDjXO1RzJ3nM5YCn1mmd7NqLj2BYtxvdiXVc9wGtnCm9-gbEhAdezdN0a0rFtqkqv9F87CeGhSYsCu_d5MkvVU8LEaQD3v0inhjtw",
+               "width" : 4128
+            }
+         ],
+         "place_id" : "ChIJdbAkD27dOkcRRU83-8aTun8",
+         "plus_code" : {
+            "compound_code" : "R2RH+23 Lviv, Lviv Oblast, Ukraine",
+            "global_code" : "8GX6R2RH+23"
+         },
+         "rating" : 4,
+         "reference" : "ChIJdbAkD27dOkcRRU83-8aTun8",
+         "scope" : "GOOGLE",
+         "types" : [ "lodging", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 451,
+         "vicinity" : "Svobody Avenue, 5, Lviv"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 49.8566878,
+               "lng" : 24.0211953
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 49.897471,
+                  "lng" : 24.0642121
+               },
+               "southwest" : {
+                  "lat" : 49.8426911,
+                  "lng" : 23.912311
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png",
+         "id" : "b07439c771cc444fadca022f2ec420d37af32f41",
+         "name" : "Shevchenkivskyi District",
+         "photos" : [
+            {
+               "height" : 1952,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113258855868824650917/photos\"\u003eРоман Гонтарик\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAKJthLP9J5MfCiYWMBJ4t_tDuWpFMavgqSInipLR8l1OMjlksuihPG0pOuPkirB-bIF5Ny1ps-lvlLfO0pT5UrhdtbfCsB-XNMRKeb9jxJSB5CUthdtZ6KpkbV_3gE1B5EhD6_zAo8onFGLFzSXJGm4ljGhSuigltDmYSQq44DvU9XNsPvIohGQ",
+               "width" : 8197
+            }
+         ],
+         "place_id" : "ChIJe5Cvh87dOkcRzM7T8kS2C8k",
+         "reference" : "ChIJe5Cvh87dOkcRzM7T8kS2C8k",
+         "scope" : "GOOGLE",
+         "types" : [ "sublocality_level_1", "sublocality", "political" ],
+         "vicinity" : "Shevchenkivskyi District"
+      }
+   ],
+   "status" : "OK"
+}

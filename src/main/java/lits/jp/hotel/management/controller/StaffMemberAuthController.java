@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping()
 public class StaffMemberAuthController {
 
+
   private StaffMemberAuthService staffMemberAuthService;
 
   @Autowired
@@ -24,13 +25,10 @@ public class StaffMemberAuthController {
     this.staffMemberAuthService = staffMemberAuthService;
   }
 
-  @Autowired StaffMemberRepository staffMemberRepository;
-
   @PostMapping(value = "/login")
   @ApiOperation("auth")
   public ResponseEntity<?> auth(@RequestBody StaffMember staffMember) {
     log.info("Request from POST client " + staffMember.getLastName(), staffMember.getPassword());
-    return ResponseEntity.ok(
-        staffMemberAuthService.auth(staffMember.getLastName(), staffMember.getPassword()));
+    return ResponseEntity.ok(staffMemberAuthService.auth(staffMember.getLastName(), staffMember.getPassword()));
   }
 }

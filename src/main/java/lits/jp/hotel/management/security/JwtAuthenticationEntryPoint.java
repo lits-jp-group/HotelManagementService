@@ -2,6 +2,7 @@ package lits.jp.hotel.management.security;
 
 import java.io.IOException;
 import java.io.Serializable;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
@@ -15,11 +16,9 @@ public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint, Se
 
   @Override
   public void commence(
-      HttpServletRequest httpServletRequest,
-      HttpServletResponse httpServletResponse,
-      AuthenticationException e)
-      throws IOException {
-    log.debug("Exception in class JwtAuthenticationEntryPoint (commence)");
-    httpServletResponse.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+      HttpServletRequest request, HttpServletResponse response, AuthenticationException e)
+      throws IOException, ServletException {
+    log.error("Exception in class JwtAuthenticationEntryPoint (commence)", e);
+    response.sendError(HttpServletResponse.SC_UNAUTHORIZED, e.getMessage());
   }
 }

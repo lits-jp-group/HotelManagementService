@@ -6,7 +6,7 @@ import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import lits.jp.hotel.management.repository.StaffMemberRepository;
 import lits.jp.hotel.management.services.TokenService;
 import lits.jp.hotel.management.services.impl.StaffMemberServiceImpl;
 import lombok.extern.slf4j.Slf4j;
@@ -22,9 +22,11 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
 
   private static final String BEARER_TYPE = "Bearer";
 
-  @Autowired private StaffMemberServiceImpl staffMemberService;
+  @Autowired private StaffMemberServiceImpl staffMemberServiceImpl;
 
   @Autowired private TokenService tokenService;
+
+  @Autowired StaffMemberRepository staffMemberRepository;
 
   @Override
   protected void doFilterInternal(
@@ -37,14 +39,15 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
             .map(token -> token.substring(BEARER_TYPE.length() + 1))
             .map(token -> tokenService.parseToken(token))
             .orElse(null);
-    log.debug("Exception in class JwtAuthenticationTokenFilter (doFilterInternal)");
-    log.info("Checking authentication for user " + accountId);
-    log.info("Long account ID(by JwtAuthenticationTokenFilter  = " + accountId);
 
     if (accountId != null && SecurityContextHolder.getContext().getAuthentication() == null) {
       JwtUser jwtUser =
+          //          JwtUserFactory.create(accountId, "Admin"); // it is necessary to get roles and
+          // put here??? how???
           JwtUserFactory.create(
-              accountId, staffMemberService.getAuthority(staffMemberService.findOne(accountId)));
+              accountId,
+              staffMemberServiceImpl.getAuthority(
+                  staffMemberRepository.findOneByStaffMemberId(accountId)));
 
       UsernamePasswordAuthenticationToken authentication =
           new UsernamePasswordAuthenticationToken(jwtUser, null, jwtUser.getAuthorities());
@@ -54,6 +57,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
     } else {
       log.info("Problem from JwtAuthenticationTokenFilter. account-ID from token is " + accountId);
     }
+
     chain.doFilter(request, response);
   }
 

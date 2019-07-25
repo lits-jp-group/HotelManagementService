@@ -21,7 +21,7 @@ public class Place {
 
   @Override
   public String toString() {
-    return "\nPlace name: "
+    return "Place name: "
         + name
         + "; address: "
         + addr
@@ -29,7 +29,7 @@ public class Place {
         + lat
         + ", lng="
         + lng
-        + "\nType: "
+        + "Type: "
         + placeTypes;
   }
 
